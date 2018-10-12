@@ -10,6 +10,8 @@ export const BlogPostTemplate = ({
   categories,
   tags,
   title,
+  tagline,
+  frontImage,
   date,
   helmet,
 }) => {
@@ -19,9 +21,11 @@ export const BlogPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-            <div dangerouslySetInnerHTML={{ __html: title }} />
+          <img src={{ frontImage }}/>
+            <h1 className="title is-size-2 has-text-weight-bold is-bold-light" dangerouslySetInnerHTML={{ __html: title }}>
             </h1>
+            <h2 className="title has-text-weight-bold is-bold-light" dangerouslySetInnerHTML={{ __html: tagline }}>
+            </h2>
             <div dangerouslySetInnerHTML={{ __html: content }} />
             <div style={{ marginTop: `4rem` }}>
               <p>{date}</p>
@@ -31,8 +35,7 @@ export const BlogPostTemplate = ({
                   <ul className="taglist">
                     {categories.map(category => (
                       <li key={`${category}cat`}>
-                        <Link to={`/categories/${category.slug}/`}>
-                         <div dangerouslySetInnerHTML={{ __html: category.name }} /> 
+                        <Link to={`/categories/${category.slug}/`} dangerouslySetInnerHTML={{ __html: category.name }}> 
                         </Link>
                       </li>
                     ))}
@@ -45,8 +48,7 @@ export const BlogPostTemplate = ({
                   <ul className="taglist">
                     {tags.map(tag => (
                       <li key={`${tag}tag`}>
-                        <Link to={`/tags/${tag.slug}/`}>
-                        <div dangerouslySetInnerHTML={{ __html: tag.name }} /> 
+                        <Link to={`/tags/${tag.slug}/`} dangerouslySetInnerHTML={{ __html: tag.name }}> 
                         </Link>
                       </li>
                     ))}
@@ -78,6 +80,7 @@ const BlogPost = ({ data }) => {
         categories={post.categories}
         tags={post.tags}
         title={post.title}
+        tagline={post.acf.tagline}
         date={post.date}
       />
     </Layout>
