@@ -4,9 +4,11 @@ import Helmet from 'react-helmet'
 import Navbar from '../components/Navbar'
 import './all.sass'
 
+import config from "../../data/SiteConfig";
+
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+    <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
     <Navbar />
     <div>{children}</div>
   </div>

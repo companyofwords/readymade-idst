@@ -1,17 +1,17 @@
 module.exports = {
   siteTitle: "IDST! Infitesimal", // Site title.
-  siteTitleAlt: "GatsbyJS WordPress API Starter", // Alternative site title for SEO.
+  siteTitleAlt: "IDST! Infitesimal", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
-  siteUrl: "https://ericwindmill.com", // Domain of your website without pathPrefix.
+  siteUrl: "https://idst.org", // Domain of your website without pathPrefix.
   pathPrefix: "/gatsby-wordpress-starter", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription: "A GatsbyJS stater with the WordPress API built  in mind.", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "We make community artworks across Cheshire, Stoke, Manchester & The North West", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "1825356251115265", // FB Application ID for using app insights
   googleAnalyticsID: "UA-47311644-5", // GA tracking ID.
   disqusShortname: "https-vagr9k-github-io-gatsby-advanced-starter", // Disqus shortname.
   postDefaultCategoryID: "Tech", // Default category for posts.
   userName: "User", // Username to display in the author segment.
-  userTwitter: "@ericwindmill", // Optionally renders "Follow Me" in the UserInfo segment.
+  userTwitter: "@idst", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Portland, Oregon, USA ", // User location to display in the author segment.
   userAvatar: "https://api.adorable.io/avatars/150/test.png", // User avatar to display in the author segment.
   userDescription:
@@ -34,7 +34,7 @@ module.exports = {
       iconClassName: "fa fa-envelope"
     }
   ],
-  copyright: "Copyright © 2017. Advanced User", // Copyright string for the footer of the website and RSS feed.
+  copyright: "Copyright © 2019 IDST!", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
   backgroundColor: "#e0e0e0" // Used for setting manifest background color.
 };

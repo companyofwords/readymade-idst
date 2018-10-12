@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
+import config from "../../data/SiteConfig"
 
 export const BlogPostTemplate = ({
   content,
@@ -71,7 +72,7 @@ const BlogPost = ({ data }) => {
     <Layout>
       <BlogPostTemplate
         content={post.content}
-        helmet={<Helmet title={`${post.title} | Blog`} />}
+        helmet={<Helmet title={`${post.title} | ${config.siteTitle} | ${config.siteDescription}`} />}
         categories={post.categories}
         tags={post.tags}
         title={post.title}
