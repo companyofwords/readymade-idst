@@ -1,6 +1,8 @@
+const config = require('./data/SiteConfig')
+
 module.exports = {
   siteMetadata: {
-    title: 'IDST!',
+    title: config.siteTitle,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
