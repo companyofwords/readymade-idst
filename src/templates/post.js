@@ -20,7 +20,7 @@ export const BlogPostTemplate = ({
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
+            <div dangerouslySetInnerHTML={{ __html: title }} />
             </h1>
             <div dangerouslySetInnerHTML={{ __html: content }} />
             <div style={{ marginTop: `4rem` }}>
@@ -32,7 +32,7 @@ export const BlogPostTemplate = ({
                     {categories.map(category => (
                       <li key={`${category}cat`}>
                         <Link to={`/categories/${category.slug}/`}>
-                          {category.name}
+                         <div dangerouslySetInnerHTML={{ __html: category.name }} /> 
                         </Link>
                       </li>
                     ))}
@@ -45,7 +45,9 @@ export const BlogPostTemplate = ({
                   <ul className="taglist">
                     {tags.map(tag => (
                       <li key={`${tag}tag`}>
-                        <Link to={`/tags/${tag.slug}/`}>{tag.name}</Link>
+                        <Link to={`/tags/${tag.slug}/`}>
+                        <div dangerouslySetInnerHTML={{ __html: tag.name }} /> 
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -108,6 +110,9 @@ export const pageQuery = graphql`
       categories {
         name
         slug
+      }
+      acf {
+        tagline
       }
       tags {
         name
