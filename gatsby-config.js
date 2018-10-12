@@ -3,6 +3,7 @@ const config = require('./data/SiteConfig')
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
+    tagline: config.siteTagline,
   },
   plugins: [
     'gatsby-plugin-react-helmet',

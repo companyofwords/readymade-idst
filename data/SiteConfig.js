@@ -1,5 +1,6 @@
 module.exports = {
   siteTitle: "IDST! Infitesimal", // Site title.
+  siteTagline: "We make community artworks",
   siteTitleAlt: "IDST! Infitesimal", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://idst.org", // Domain of your website without pathPrefix.

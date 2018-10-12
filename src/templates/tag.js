@@ -15,6 +15,7 @@ class TagRoute extends React.Component {
     ))
     const tag = this.props.pageContext.name
     const title = this.props.data.site.siteMetadata.title
+    const tagline = this.props.data.site.siteMetadata.tagline
     const totalCount = this.props.data.allWordpressPost.totalCount
     const tagHeader = `${totalCount} post${
       totalCount === 1 ? '' : 's'
@@ -23,7 +24,7 @@ class TagRoute extends React.Component {
     return (
       <Layout>
         <section className="section">
-          <Helmet title={`${tag} | ${title}`} />
+          <Helmet title={`${tag} | ${title} | ${tagline}`} />
           <div className="container content">
             <div className="columns">
               <div
@@ -48,6 +49,7 @@ export const tagPageQuery = graphql`
     site {
       siteMetadata {
         title
+        tagline
       }
     }
     allWordpressPost(filter: { tags: { slug: { eq: $slug } } }) {
