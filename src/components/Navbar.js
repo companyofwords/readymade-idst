@@ -7,11 +7,19 @@ const Navbar = () => (
   <StaticQuery
     query={graphql`
       query {
+        wordpressWpApiMenusMenusItems(slug: { eq: "main-nav" }) {
+          items {
+            title
+            object_slug
+            url
+          }
+        }
         allWordpressPage(sort: { fields: wordpress_id }, limit: 5) {
           edges {
             node {
               title
               slug
+              
             }
           }
         }
@@ -19,21 +27,22 @@ const Navbar = () => (
     `}
     render={data => (
       <nav className="navbar is-transparent">
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item">
+      <div className="container">
+        <div className="navbar-brand">
+        <Link to="/" className="navbar-item">
               <figure className="image">
                 <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
               </figure>
             </Link>
           </div>
           <div className="navbar-start">
-            {data.allWordpressPage.edges.map(edge => (
-              <Link className="navbar-item" to={edge.node.slug}>
-                {edge.node.title}
-              </Link>
-            ))}
-          </div>
+        {data.wordpressWpApiMenusMenusItems.items.map(item => (
+          <Link to={`/${item.object_slug}`} style={{
+            color: '#000',
+            marginRight: '2em',
+          }}>  {item.title} </Link>
+        ))}
+        </div>
           <div className="navbar-end">
             <a
               className="navbar-item"
