@@ -19,7 +19,7 @@ module.exports = {
         protocol: 'https',
         // Use 'Advanced Custom Fields' Wordpress plugin
         useACF: true,
-        acfOptionPageIds: ["038ece9f-326d-5bb0-8f17-1bb72ce06c57"],
+        acfOptionPageIds: ["Options"],
         auth: {},
         // Set to true to debug endpoints on 'gatsby build'
         verboseOutput: false,

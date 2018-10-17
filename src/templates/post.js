@@ -11,7 +11,8 @@ export const BlogPostTemplate = ({
   tags,
   title,
   tagline,
-  frontImage,
+  organisers,
+  frontimage,
   date,
   helmet,
 }) => {
@@ -21,11 +22,14 @@ export const BlogPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-          <img src={{ frontImage }}/>
+        
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light" dangerouslySetInnerHTML={{ __html: title }}>
             </h1>
             <h2 className="title has-text-weight-bold is-bold-light" dangerouslySetInnerHTML={{ __html: tagline }}>
             </h2>
+            <img src={`${frontimage}`}/>
+            <p>Organisers: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: organisers }}>
+            </p>
             <div dangerouslySetInnerHTML={{ __html: content }} />
             <div style={{ marginTop: `4rem` }}>
               <p>{date}</p>
@@ -81,6 +85,8 @@ const BlogPost = ({ data }) => {
         tags={post.tags}
         title={post.title}
         tagline={post.acf.tagline}
+        organisers={post.acf.organisers}
+        frontimage={post.acf.fullfrontimage.source_url}
         date={post.date}
       />
     </Layout>
@@ -116,6 +122,12 @@ export const pageQuery = graphql`
       }
       acf {
         tagline
+        organisers
+        frontimage
+        fullfrontimage {
+          source_url
+          caption
+        }
       }
       tags {
         name
