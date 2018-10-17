@@ -21,7 +21,7 @@ export default class IndexPage extends React.Component {
                 style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
                 key={post.id}
               >
-              <img src="{post.slug}"/>
+              <img src={`${post.acf.frontimage.source_url}`}/>
                 <p>
                   <Link className="has-text-primary" to={post.slug}>
                     {post.title}
@@ -67,6 +67,16 @@ export const pageQuery = graphql`
           author 
           date(formatString: "MMMM DD, YYYY")
           slug
+          acf {
+            tagline
+            organisers
+            frontimage {
+              link
+              caption
+              source_url
+              title
+            }
+          }
         }
       }
     }
