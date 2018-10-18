@@ -46,8 +46,7 @@ const FrontCarousel = () => (
       }
     `}
     render={data => (
-      
-      <div className="container">
+    
       <Carousel>
       {data.allWordpressWpSlide.edges.map(edge => (
           <div key={edge.node.id}>
@@ -62,7 +61,6 @@ const FrontCarousel = () => (
           </div>
         ))}
       </Carousel>
-      </div>
       
     )}
   />
