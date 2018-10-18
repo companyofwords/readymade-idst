@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
+import FrontCarousel from './FrontCarousel'
 import Footer from '../components/Footer'
 import './all.sass'
 
@@ -11,6 +12,7 @@ const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
     <Navbar />
+    <FrontCarousel/>
     <div>{children}</div>
     <Footer />
   </div>
