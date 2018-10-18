@@ -19,7 +19,7 @@ module.exports = {
         protocol: 'https',
         // Use 'Advanced Custom Fields' Wordpress plugin
         useACF: true,
-        acfOptionPageIds: ["Options"],
+        acfOptionPageIds: ["headless_settings"],
         auth: {},
         // Set to true to debug endpoints on 'gatsby build'
         verboseOutput: false,
