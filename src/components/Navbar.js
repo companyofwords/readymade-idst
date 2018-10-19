@@ -17,6 +17,7 @@ const Navbar = () => (
               wordpress_id
               title
               url
+              object_slug
             }
           }
         }
@@ -54,7 +55,7 @@ const Navbar = () => (
                         <ul>
                             {item.wordpress_children && item.wordpress_children.map((subitem) =>
                                 <li key={item.wordpress_id}>
-                                    <Link to={subitem.url}>
+                                    <Link to={subitem.object_slug}>
                                         {subitem.title}
                                     </Link>
                                 </li>
