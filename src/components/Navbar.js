@@ -13,6 +13,11 @@ const Navbar = () => (
             object_slug
             url
             wordpress_id
+            wordpress_children {
+              wordpress_id
+              title
+              url
+            }
           }
         }
         allWordpressPage(sort: { fields: wordpress_id }, limit: 5) {
