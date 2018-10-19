@@ -42,12 +42,28 @@ const Navbar = () => (
             </Link>
           </div>
           <div className="navbar-start">
-        {data.wordpressWpApiMenusMenusItems.items.map(item => (
-          <Link key={`/${item.wordpress_id}`} to={`/${item.object_slug}`} style={{
+        <ul>
+                {data.wordpressWpApiMenusMenusItems.items.map((item) =>
+                    <li key={`/${item.wordpress_id}`}>
+                        <Link to={`/${item.object_slug}`} style={{
             color: '#000',
             marginRight: '2em',
-          }}>  {item.title} </Link>
-        ))}
+          }}>
+                            {item.title}
+                        </Link>
+                        <ul>
+                            {item.wordpress_children && item.wordpress_children.map((subitem) =>
+                                <li key={item.wordpress_id}>
+                                    <Link to={subitem.url}>
+                                        {subitem.title}
+                                    </Link>
+                                </li>
+                            )}
+                        </ul>
+                    </li>
+                )}
+            </ul>  
+
         </div>
           <div className="navbar-end">
             <a
