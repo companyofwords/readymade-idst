@@ -9292,11 +9292,6 @@ nth-check@^1.0.1, nth-check@~1.0.1:
   dependencies:
     boolbase "~1.0.0"
 
-nuka-carousel-autoscroll@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/nuka-carousel-autoscroll/-/nuka-carousel-autoscroll-0.1.5.tgz#83ec1729e14130c9eba687a3a2631482eed1c344"
-  integrity sha1-g+wXKeFBMMnrpoejomMUgu7Rw0Q=
-
 nuka-carousel@^4.4.1:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-4.4.1.tgz#bd1f378b5caf364fa6d93a800b17bd81a317914c"

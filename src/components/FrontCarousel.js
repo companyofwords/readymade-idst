@@ -47,7 +47,7 @@ const FrontCarousel = () => (
     `}
     render={data => (
     
-      <Carousel slidesToShow={3} autoplay={true} autoplayInterval={9000} speed={200} wrapAround={true}>
+      <Carousel slidesToShow={3} autoplay={true} autoplayInterval={9000} easing="easeInOutElastic" speed={200} wrapAround={true}>
       {data.allWordpressWpSlide.edges.map(edge => (
           <div key={edge.node.id}>
           <Link to={edge.node.acf.link} style={{
