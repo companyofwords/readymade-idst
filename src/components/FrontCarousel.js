@@ -25,7 +25,7 @@ const FrontCarousel = () => (
             }
           }
         }
-        allWordpressWpSlide(sort: { fields: wordpress_id }, limit: 2) {
+        allWordpressWpSlide(sort: { fields: wordpress_id }, limit: 99) {
           edges { 
             node {
               id
@@ -47,7 +47,7 @@ const FrontCarousel = () => (
     `}
     render={data => (
     
-      <Carousel>
+      <Carousel slidesToShow={3} autoplay={true} autoplayInterval={9000} speed={200} wrapAround={true}>
       {data.allWordpressWpSlide.edges.map(edge => (
           <div key={edge.node.id}>
           <Link to={edge.node.acf.link} style={{

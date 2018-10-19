@@ -12,6 +12,7 @@ const Navbar = () => (
             title
             object_slug
             url
+            wordpress_id
           }
         }
         allWordpressPage(sort: { fields: wordpress_id }, limit: 5) {
@@ -37,7 +38,7 @@ const Navbar = () => (
           </div>
           <div className="navbar-start">
         {data.wordpressWpApiMenusMenusItems.items.map(item => (
-          <Link to={`/${item.object_slug}`} style={{
+          <Link key={`/${item.wordpress_id}`} to={`/${item.object_slug}`} style={{
             color: '#000',
             marginRight: '2em',
           }}>  {item.title} </Link>
