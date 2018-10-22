@@ -8,7 +8,6 @@ import TimeUntil from './TimeUntil'
 import PartnerCarousel from './PartnerCarousel'
 import SupporterCarousel from './SupporterCarousel'
 import Footer from '../components/Footer'
-import BackTop from '../components/BackToTop'
 import './all.sass'
 
 import config from "../../data/SiteConfig";
@@ -24,7 +23,6 @@ const TemplateWrapper = ({ children }) => (
     <PartnerCarousel/>
     <SupporterCarousel/>
     <Footer />
-    <BackTop />
   </div>
 )
 
