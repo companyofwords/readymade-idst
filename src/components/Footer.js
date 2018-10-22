@@ -36,6 +36,7 @@ const Footer = () => (
 
       <div className="navbar-start">
         <ul>
+          <li><span>© {(new Date().getFullYear())} IDST! CIC</span></li>
                 {data.wordpressWpApiMenusMenusItems.items.map((item) =>
                     <li key={`/${item.wordpress_id}`}>
                         <Link to={`/${item.object_slug}`} style={{
@@ -60,8 +61,7 @@ const Footer = () => (
         </div>
                               
         </div>
-        <span>
-   © {(new Date().getFullYear())} IDST! CIC</span>
+        
       </nav>
     )}
   />
