@@ -8,6 +8,7 @@ import TimeUntil from './TimeUntil'
 import PartnerCarousel from './PartnerCarousel'
 import SupporterCarousel from './SupporterCarousel'
 import Footer from '../components/Footer'
+import ScrollButton from '../components/ScrollToTop'
 import './all.sass'
 
 import config from "../../data/SiteConfig";
@@ -23,6 +24,7 @@ const TemplateWrapper = ({ children }) => (
     <PartnerCarousel/>
     <SupporterCarousel/>
     <Footer />
+    <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
   </div>
 )
 
