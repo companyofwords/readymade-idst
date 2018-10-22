@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Navbar from '../components/Navbar'
 import TopNavbar from '../components/TopNavbar'
 import FrontCarousel from './FrontCarousel'
+import TimeUntil from './TimeUntil'
 import PartnerCarousel from './PartnerCarousel'
 import SupporterCarousel from './SupporterCarousel'
 import Footer from '../components/Footer'
@@ -18,6 +19,7 @@ const TemplateWrapper = ({ children }) => (
     <Navbar />
     <FrontCarousel/>
     <div>{children}</div>
+    <TimeUntil/>
     <PartnerCarousel/>
     <SupporterCarousel/>
     <Footer />
