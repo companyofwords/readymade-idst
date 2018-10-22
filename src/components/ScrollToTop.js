@@ -1,4 +1,6 @@
 import React from 'react'
+import IconButton from '@material-ui/core/IconButton'
+import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp'
 
 class ScrollButton extends React.Component {
     constructor() {
@@ -24,7 +26,9 @@ class ScrollButton extends React.Component {
     render () {
         return <button title='Back to top' className='scroll' 
                  onClick={ () => { this.scrollToTop(); }}>
-                  <span>Up</span>
+                  <span><IconButton>
+            <ArrowDropUpIcon />
+          </IconButton></span>
                 </button>;
      }
   } 
