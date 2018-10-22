@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 
-
 const Footer = () => (
   <StaticQuery
     query={graphql`
@@ -34,7 +33,7 @@ const Footer = () => (
     render={data => (
       <nav className="navbar is-transparent">
       <div className="container">
-        
+
       <div className="navbar-start">
         <ul>
                 {data.wordpressWpApiMenusMenusItems.items.map((item) =>
@@ -57,10 +56,12 @@ const Footer = () => (
                     </li>
                 )}
             </ul>  
-
+                             
         </div>
-
+                              
         </div>
+        <span>
+   © {(new Date().getFullYear())} IDST! CIC</span>
       </nav>
     )}
   />
