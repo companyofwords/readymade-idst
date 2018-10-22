@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "author": "GatsbyCentral.com",
   "dependencies": {
+    "@material-ui/core": "^3.3.0",
     "gatsby": "^2.0.0",
     "gatsby-plugin-lodash": "^3.0.1",
     "gatsby-plugin-netlify": "^2.0.0",
@@ -16,6 +17,7 @@
     "gatsby-transformer-remark": "^2.1.1",
     "gatsby-transformer-sharp": "^2.1.1",
     "lodash": "^4.17.5",
+    "material-ui": "^0.20.2",
     "node-sass": "^4.9.2",
     "nuka-carousel": "^4.4.1",
     "parcel-bundler": "^1.9.4",
