@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
+import Toolbar from '@material-ui/core/Toolbar'
 
 const Navbar = () => (
   <StaticQuery
@@ -33,6 +34,7 @@ const Navbar = () => (
       }
     `}
     render={data => (
+      <Toolbar>
       <nav className="navbar is-transparent">
       <div className="container">
         <div className="navbar-brand">
@@ -80,6 +82,7 @@ const Navbar = () => (
           </div>
         </div>
       </nav>
+      </Toolbar>
     )}
   />
 )
