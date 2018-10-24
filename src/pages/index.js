@@ -26,15 +26,12 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <section className="section">
-          <div className="container">
+        
             {posts.map(({ node: post }) => (
-              <div
-                className="content"
-                style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                key={post.id}
-              >
-              <img src={`${post.acf.frontimage.source_url}`}/>
+              <div key={post.id}>
+              <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)}>
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+              
                 <p>
                   <Link className="has-text-primary" to={post.slug}>
                     {post.title}
@@ -42,72 +39,32 @@ export default class IndexPage extends React.Component {
                   <span> &bull; </span>
                   <small>{post.date}</small>
                 </p>
-                <div>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                <img src={`${post.acf.frontimage.source_url}`}/>
                   <div
                     dangerouslySetInnerHTML={{
                       __html: post.excerpt.replace(/<p class="link-more.*/, ''),
                     }}
                   />
-                  <Link className="button is-small" to={post.slug}>
-                    Keep Reading →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography>General settings</Typography>
-            <Typography>I am an expansion panel</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
+                  <Typography>
+              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
+              maximus est, id dignissim quam. Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
+              maximus est, id dignissim quam.
+              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
+              maximus est, id dignissim quam.
+              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
+              maximus est, id dignissim quam.
               Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
               maximus est, id dignissim quam.
             </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel expanded={expanded === 'panel2'} onChange={this.handleChange('panel2')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography>Users</Typography>
-            <Typography>
-              You are currently not an owner
-            </Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar
-              diam eros in elit. Pellentesque convallis laoreet laoreet.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel expanded={expanded === 'panel3'} onChange={this.handleChange('panel3')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography>Advanced settings</Typography>
-            <Typography>
-              Filtering has been entirely disabled for whole web server
-            </Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas
-              eros, vitae egestas augue. Duis vel est augue.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel expanded={expanded === 'panel4'} onChange={this.handleChange('panel4')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography>Personal data</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas
-              eros, vitae egestas augue. Duis vel est augue.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+                  <Link className="button is-small" to={post.slug}>
+                    Keep Reading →
+                  </Link>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+              </div>
+            ))}
       </Layout>
     )
   }
