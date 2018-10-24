@@ -29,7 +29,7 @@ export default class IndexPage extends React.Component {
         
             {posts.map(({ node: post }) => (
               <div key={post.id}>
-              <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)}>
+              <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)} style={{backgroundImage: `url("${post.acf.frontimage.source_url}")`}}>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               
                 <p>
