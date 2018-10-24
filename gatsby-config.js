@@ -25,6 +25,15 @@ module.exports = {
         verboseOutput: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `lora`,
+          `patua one` // you can also specify font weights and styles
+        ]
+      }
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-netlify', // make sure to keep it last in the array
