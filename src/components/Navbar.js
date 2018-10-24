@@ -54,11 +54,11 @@ const Navbar = () => (
                         </Link>
                         
                             {item.wordpress_children && item.wordpress_children.map((subitem) =>
-                                <Typography key={item.wordpress_id}>
+                                <span key={item.wordpress_id}>
                                     <Link to={subitem.object_slug}>
                                         {subitem.title}
                                     </Link>
-                                </Typography>
+                                </span>
                             )}
                         
                     </Typography>

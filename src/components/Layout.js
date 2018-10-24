@@ -18,7 +18,7 @@ const TemplateWrapper = ({ children }) => (
     <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
     <Navbar />
     <div>{children}</div>
-    <Footer />
+    <Footer/>
     <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
   </div>
 )

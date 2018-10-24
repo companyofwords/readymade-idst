@@ -24,12 +24,12 @@ class ScrollButton extends React.Component {
     }
     
     render () {
-        return <button title='Back to top' className='scroll' 
+        return <div title='Back to top' className='scroll' 
                  onClick={ () => { this.scrollToTop(); }}>
                   <IconButton>
             <ArrowDropUpIcon/>
           </IconButton>
-                </button>;
+                </div>;
      }
   } 
 
