@@ -35,28 +35,24 @@ const Footer = () => (
       <div className="container">
 
       <div className="navbar-start">
-        <ul>
-          <li><span>© {(new Date().getFullYear())} IDST! CIC</span></li>
+        <div>
+          <span>© {(new Date().getFullYear())} IDST! CIC</span>
                 {data.wordpressWpApiMenusMenusItems.items.map((item) =>
-                    <li key={`/${item.wordpress_id}`}>
-                        <Link to={`/${item.object_slug}`} style={{
-            color: '#000',
-            marginRight: '2em',
-          }}>
-                            {item.title}
+                    <span key={`/${item.wordpress_id}`}>
+                        <Link to={`/${item.object_slug}`}>
+                             | {item.title} |
                         </Link>
-                        <ul>
+                        
                             {item.wordpress_children && item.wordpress_children.map((subitem) =>
-                                <li key={item.wordpress_id}>
+                                <span key={item.wordpress_id}>
                                     <Link to={subitem.object_slug}>
-                                        {subitem.title}
+                                        {subitem.title} |
                                     </Link>
-                                </li>
+                                </span>
                             )}
-                        </ul>
-                    </li>
+                    </span>
                 )}
-            </ul>  
+            </div>  
                              
         </div>
                               
