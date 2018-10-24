@@ -16,13 +16,7 @@ import config from "../../data/SiteConfig";
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
-    <TopNavbar />
-    <Navbar />
-    <FrontCarousel/>
     <div>{children}</div>
-    <TimeUntil/>
-    <PartnerCarousel/>
-    <SupporterCarousel/>
     <Footer />
     <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
   </div>
