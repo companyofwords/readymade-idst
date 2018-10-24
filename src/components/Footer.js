@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import PostComments from "./Comments";
 
 const Footer = () => (
   <StaticQuery
@@ -34,7 +33,6 @@ const Footer = () => (
     render={data => (
       <nav className="navbar is-transparent">
       <div className="container">
-      <PostComments />
       <div className="navbar-start">
         <div>
           <span>© {(new Date().getFullYear())} IDST! CIC</span>

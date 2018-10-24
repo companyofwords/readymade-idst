@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import config from "../../data/SiteConfig"
+import PostComments from "../components/Comments";
 
 export const BlogPostTemplate = ({
   content,
@@ -16,6 +17,8 @@ export const BlogPostTemplate = ({
   frontimagetitle,
   date,
   helmet,
+  slug,
+  id
 }) => {
   return (
     <section className="section">
@@ -63,6 +66,7 @@ export const BlogPostTemplate = ({
             </div>
           </div>
         </div>
+        <PostComments slug={slug} post={id}/>
       </div>
     </section>
   )
@@ -90,6 +94,8 @@ const BlogPost = ({ data }) => {
         frontimage={post.acf.frontimage.source_url}
         frontimagetitle={post.acf.frontimage.title}
         date={post.date}
+        slug={post.slug}
+        id={post.id}
       />
     </Layout>
   )
