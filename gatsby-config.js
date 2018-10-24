@@ -43,8 +43,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `lora`,
-          `patua one` // you can also specify font weights and styles
+          `permanent marker`,
+          `indie flower` // you can also specify font weights and styles
         ]
       }
     },
