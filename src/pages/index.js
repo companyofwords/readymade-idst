@@ -32,13 +32,15 @@ export default class IndexPage extends React.Component {
               <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)} style={{backgroundImage: `url("${post.acf.frontimage.source_url}")`}}>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               
-                <p>
+                <h1>
                   <Link className="has-text-primary" to={post.slug}>
                     {post.title}
                   </Link>
                   <span> &bull; </span>
                   <small>{post.date}</small>
-                </p>
+                </h1>
+                <br/>
+                <h1><small>{post.date}</small></h1>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                 <img src={`${post.acf.frontimage.source_url}`}/>
