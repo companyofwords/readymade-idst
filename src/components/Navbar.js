@@ -1,12 +1,8 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import logo from '../images/logo.svg'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
 
 const Navbar = () => (
   <StaticQuery
@@ -58,11 +54,11 @@ const Navbar = () => (
                         </Link>
                         
                             {item.wordpress_children && item.wordpress_children.map((subitem) =>
-                                <MenuItem key={item.wordpress_id}>
+                                <Typography key={item.wordpress_id}>
                                     <Link to={subitem.object_slug}>
                                         {subitem.title}
                                     </Link>
-                                </MenuItem>
+                                </Typography>
                             )}
                         
                     </Typography>
