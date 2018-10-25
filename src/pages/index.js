@@ -47,6 +47,7 @@ export default class IndexPage extends React.Component {
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                 <img src={`${post.acf.frontimage.url}`}/>
+            
                   <div
                     dangerouslySetInnerHTML={{
                       __html: post.excerpt.replace(/<p class="link-more.*/, ''),
@@ -120,6 +121,10 @@ export const pageQuery = graphql`
             }
           }
           acf {
+            partners {
+              name
+              link
+            }
             tagline
             organisers
             frontimage {
@@ -129,6 +134,33 @@ export const pageQuery = graphql`
               title
             }
           }
+        }
+      }
+    }
+    wordpressPost{
+      id
+      title
+      excerpt
+      author 
+      date(formatString: "MMMM DD, YYYY")
+      slug
+      _links {
+        wp_featuredmedia {
+          href
+        }
+      }
+      acf {
+        partners {
+          name
+          link
+        }
+        tagline
+        organisers
+        frontimage {
+          link
+          caption
+          url
+          title
         }
       }
     }
