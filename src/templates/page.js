@@ -7,13 +7,13 @@ import Helmet from 'react-helmet'
 
 export const PageTemplate = ({ title, content }) => {
   return (
-    <section className="section section--gradient">
+    <section>
     <Helmet title={` ${title} | ${config.siteTitle} | ${config.siteDescription}`} />
       <div className="">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light" dangerouslySetInnerHTML={{ __html: title }}>
+        <div >
+          <div >
+            <div >
+              <h2 dangerouslySetInnerHTML={{ __html: title }}>
               </h2>
               <div
                 className="content"

@@ -31,6 +31,7 @@ export default class IndexPage extends React.Component {
             {posts.map(({ node: post }) => (
               
               <div key={post.id}>
+              { post.acf.frontimage.url !== '' ? (
               <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)} style={{backgroundImage: `url("${post.acf.frontimage.url}")`}}>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon enter="true" exit="true" />}>
               
@@ -57,6 +58,34 @@ export default class IndexPage extends React.Component {
                   </Link>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
+              ) : ( //or without ACF
+                <ExpansionPanel expanded={expanded === `${post.slug}`} onChange={this.handleChange(`${post.slug}`)}>
+                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon enter="true" exit="true" />}>
+                
+                  <h1>
+                    <Link to={post.slug}>
+                      {post.title}
+                    </Link>
+                    <span> &bull; </span>
+                    <small>{post.date}</small>
+                  </h1>
+                  <br/>
+                  <h1><small>{post.date}</small></h1>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: post.excerpt.replace(/<p class="link-more.*/, ''),
+                      }}
+                    />
+                    
+                    <Link to={post.slug}>
+                      Keep Reading →
+                    </Link>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>  
+              )}
               </div>
                   
             ))}
@@ -85,6 +114,11 @@ export const pageQuery = graphql`
           author 
           date(formatString: "MMMM DD, YYYY")
           slug
+          _links {
+            wp_featuredmedia {
+              href
+            }
+          }
           acf {
             tagline
             organisers
