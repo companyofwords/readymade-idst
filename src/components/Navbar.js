@@ -9,6 +9,32 @@ const Navbar = () => (
   <StaticQuery
     query={graphql`
       query {
+        wordpressAcfOptions {
+          id
+          wordpress_id
+          options {
+            logo {
+              id
+            }
+            title
+            sitesubtitle
+            sitemaintitle
+            sitedescription
+            sitelongread
+            backuptoptext
+            allrightsreserved
+            copyright
+            logo {
+              localFile {
+                childImageSharp {
+                  resize(width: 180, height: 180) {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
         wordpressWpApiMenusMenusItems(slug: { eq: "main-nav" }) {
           items {
             title
