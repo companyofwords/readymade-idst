@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
+import logo from '../images/logo.svg'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import { FacebookProvider, Like } from 'react-facebook'
 
-const Footer = () => (
+const Navbar = () => (
   <StaticQuery
     query={graphql`
       query {
-        wordpressWpApiMenusMenusItems(slug: { eq: "footer" }) {
+        wordpressWpApiMenusMenusItems(slug: { eq: "main-nav" }) {
           items {
             title
             object_slug
@@ -31,31 +35,42 @@ const Footer = () => (
       }
     `}
     render={data => (
-      
       <div>
+      <Toolbar  variant="dense"> 
         <div>
-          <span>© {(new Date().getFullYear())} IDST! CIC</span>
+        <Link to="/">
+              <figure className="image">
+                <img src={logo} alt="IDST!" style={{ width: '88px' }} />
+              </figure>
+            </Link>
+          </div>
+          
+        
                 {data.wordpressWpApiMenusMenusItems.items.map((item) =>
-                    <span key={`/${item.wordpress_id}`}>
-                        <Link to={`/${item.object_slug}`}>
-                             | {item.title} |
+                    <Typography color="inherit" noWrap key={`/${item.wordpress_id}`}>
+                        <Link to={`/${item.object_slug}`} style={{
+          }}>
+                            {item.title}
                         </Link>
                         
                             {item.wordpress_children && item.wordpress_children.map((subitem) =>
                                 <span key={item.wordpress_id}>
                                     <Link to={subitem.object_slug}>
-                                        {subitem.title} |
+                                        {subitem.title}
                                     </Link>
                                 </span>
                             )}
-                    </span>
+                        
+                    </Typography>
                 )}
-            </div>  
-                             
-        </div>
-                              
+             
+      </Toolbar>
+      <FacebookProvider appId="555701548185468">
+      <Like href="http://www.facebook.com/inourmidsts" colorScheme="dark" showFaces share />
+        </FacebookProvider>
+      </div>
     )}
   />
 )
 
-export default Footer
+export default Navbar

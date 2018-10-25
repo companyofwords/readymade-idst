@@ -32,10 +32,9 @@ const TopNavbar = () => (
       }
     `}
     render={data => (
-      <nav className="navbar is-transparent">
-      <div className="container">
       
-          <div className="navbar-start">
+      
+          <div>
         <ul>
                 {data.wordpressWpApiMenusMenusItems.items.map((item) =>
                     <li key={`/${item.wordpress_id}`}>
@@ -59,9 +58,7 @@ const TopNavbar = () => (
             </ul>  
 
         </div>
-          
-        </div>
-      </nav>
+        
     )}
   />
 )

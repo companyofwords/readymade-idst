@@ -23,7 +23,7 @@ export const BlogPostTemplate = ({
   return (
     <section className="section">
       {helmet || ''}
-      <div className="container content">
+      <div className="content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
         
@@ -91,7 +91,7 @@ const BlogPost = ({ data }) => {
         title={post.title}
         tagline={post.acf.tagline}
         organisers={post.acf.organisers}
-        frontimage={post.acf.frontimage.source_url}
+        frontimage={post.acf.frontimage.url}
         frontimagetitle={post.acf.frontimage.title}
         date={post.date}
         slug={post.slug}
@@ -132,7 +132,7 @@ export const pageQuery = graphql`
         tagline
         organisers
         frontimage {
-          source_url
+          url
           caption
           title
         }

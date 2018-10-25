@@ -37,13 +37,13 @@ const Navbar = () => (
     render={data => (
       <div>
       <Toolbar  variant="dense" className="toolbar"> 
-        <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-              <figure className="image">
+        
+        <Link to="/">
+              <figure>
                 <img src={logo} alt="IDST!" style={{ width: '88px' }} />
               </figure>
             </Link>
-          </div>
+          
           
         
                 {data.wordpressWpApiMenusMenusItems.items.map((item) =>

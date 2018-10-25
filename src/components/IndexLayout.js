@@ -8,16 +8,21 @@ import TimeUntil from './TimeUntil'
 import PartnerCarousel from './PartnerCarousel'
 import SupporterCarousel from './SupporterCarousel'
 import Footer from './Footer'
+import TagList from './TagList'
+import LogoSection from './LogoSection'
+import ExquisiteCorpse from './ExquisiteCorpse'
 import ScrollButton from './ScrollToTop'
 import './all.sass'
 
 import config from "../../data/SiteConfig";
 
 const TemplateWrapper = ({ children }) => (
-  <div className="container">
+  <div className="containerIndex">
     <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
-    <div>{children}</div>
-    <Footer/>
+    <LogoSection className="logoSection" />
+    <ExquisiteCorpse className="exquisiteCorpse"/>
+    <div className="mainIndexContent">{children}</div>
+    <Footer className="footer"/>
     <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
   </div>
 )

@@ -29,7 +29,7 @@ export default class IndexPage extends React.Component {
         
             {posts.map(({ node: post }) => (
               <div key={post.id}>
-              <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)} style={{backgroundImage: `url("${post.acf.frontimage.source_url}")`}}>
+              <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)} style={{backgroundImage: `url("${post.acf.frontimage.url}")`}}>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               
                 <h1>
@@ -43,7 +43,7 @@ export default class IndexPage extends React.Component {
                 <h1><small>{post.date}</small></h1>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                <img src={`${post.acf.frontimage.source_url}`}/>
+                <img src={`${post.acf.frontimage.url}`}/>
                   <div
                     dangerouslySetInnerHTML={{
                       __html: post.excerpt.replace(/<p class="link-more.*/, ''),
@@ -87,7 +87,7 @@ export const pageQuery = graphql`
             frontimage {
               link
               caption
-              source_url
+              url
               title
             }
           }

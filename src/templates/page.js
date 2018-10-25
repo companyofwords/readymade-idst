@@ -9,7 +9,7 @@ export const PageTemplate = ({ title, content }) => {
   return (
     <section className="section section--gradient">
     <Helmet title={` ${title} | ${config.siteTitle} | ${config.siteDescription}`} />
-      <div className="container">
+      <div className="">
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <div className="section">
