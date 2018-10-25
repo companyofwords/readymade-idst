@@ -23,17 +23,19 @@ export default class IndexPage extends React.Component {
     const { data } = this.props
     const { edges: posts } = data.allWordpressPost
     const { expanded } = this.state
+    
 
     return (
       <IndexLayout>
         
             {posts.map(({ node: post }) => (
+              
               <div key={post.id}>
               <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)} style={{backgroundImage: `url("${post.acf.frontimage.url}")`}}>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               
                 <h1>
-                  <Link className="has-text-primary" to={post.slug}>
+                  <Link to={post.slug}>
                     {post.title}
                   </Link>
                   <span> &bull; </span>
@@ -50,13 +52,15 @@ export default class IndexPage extends React.Component {
                     }}
                   />
                   
-                  <Link className="button is-small" to={post.slug}>
+                  <Link to={post.slug}>
                     Keep Reading →
                   </Link>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
               </div>
+                  
             ))}
+
       </IndexLayout>
     )
   }
