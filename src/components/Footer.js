@@ -5,6 +5,32 @@ const Footer = () => (
   <StaticQuery
     query={graphql`
       query {
+        wordpressAcfOptions {
+          id
+          wordpress_id
+          options {
+            logo {
+              id
+            }
+            title
+            sitesubtitle
+            sitemaintitle
+            sitedescription
+            sitelongread
+            backuptoptext
+            allrightsreserved
+            copyright
+            logo {
+              localFile {
+                childImageSharp {
+                  resize(width: 180, height: 180) {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
         wordpressWpApiMenusMenusItems(slug: { eq: "footer" }) {
           items {
             title
@@ -34,7 +60,7 @@ const Footer = () => (
       
       <div>
         <div>
-          <span>© {(new Date().getFullYear())} IDST! CIC</span>
+          <span>© {(new Date().getFullYear())} {data.wordpressAcfOptions.options.copyright}</span>
                 {data.wordpressWpApiMenusMenusItems.items.map((item) =>
                     <span key={`/${item.wordpress_id}`}>
                         <Link to={`/${item.object_slug}`}>
