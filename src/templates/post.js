@@ -10,6 +10,7 @@ export const BlogPostTemplate = ({
   content,
   categories,
   tags,
+  partners,
   title,
   tagline,
   organisers,
@@ -63,6 +64,21 @@ export const BlogPostTemplate = ({
                   </ul>
                 </div>
               ) : null}
+              
+              {partners && partners.length ? (
+                <div>
+                  <h4>Partners</h4>
+                  <ul className="taglist">
+                    {partners.map(partner => (
+                      <li key={`${partner}tag`}>
+                        <Link to={`${partner.link}`} dangerouslySetInnerHTML={{ __html: partner.name }}> 
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
             </div>
           </div>
         </div>
@@ -88,6 +104,7 @@ const BlogPost = ({ data }) => {
         helmet={<Helmet title={`${post.title} | ${config.siteTitle} | ${config.siteDescription}`} />}
         categories={post.categories}
         tags={post.tags}
+        partners={post.acf.partners}
         title={post.title}
         tagline={post.acf.tagline}
         organisers={post.acf.organisers}
@@ -129,6 +146,10 @@ export const pageQuery = graphql`
         slug
       }
       acf {
+        partners {
+          name
+          link
+        }
         tagline
         organisers
         frontimage {
