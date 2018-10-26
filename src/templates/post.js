@@ -43,7 +43,7 @@ export const BlogPostTemplate = ({
                   <h4>Categories</h4>
                   <ul className="taglist">
                     {categories.map(category => (
-                      <li key={`${category}cat`}>
+                      <li key={`${category.slug}`}>
                         <Link to={`/categories/${category.slug}/`} dangerouslySetInnerHTML={{ __html: category.name }}> 
                         </Link>
                       </li>
@@ -56,7 +56,7 @@ export const BlogPostTemplate = ({
                   <h4>Tags</h4>
                   <ul className="taglist">
                     {tags.map(tag => (
-                      <li key={`${tag}tag`}>
+                      <li key={`${tag.slug}`}>
                         <Link to={`/tags/${tag.slug}/`} dangerouslySetInnerHTML={{ __html: tag.name }}> 
                         </Link>
                       </li>
@@ -70,7 +70,8 @@ export const BlogPostTemplate = ({
                   <h4>Partners</h4>
                   <ul className="taglist">
                     {partners.map(partner => (
-                      <li key={`${partner}tag`}>
+                      <li key={`${partner.idnumber}`}>
+                      <img src={partner.image.localFile.childImageSharp.resize.src} alt={partner.name} style={{ width: '88px' }} />
                         <Link to={`${partner.link}`} dangerouslySetInnerHTML={{ __html: partner.name }}> 
                         </Link>
                       </li>
@@ -91,7 +92,7 @@ export const BlogPostTemplate = ({
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   title: PropTypes.string,
-  helmet: PropTypes.instanceOf(Helmet),
+  //helmet: PropTypes.instanceOf(Helmet),
 }
 
 const BlogPost = ({ data }) => {
@@ -149,6 +150,16 @@ export const pageQuery = graphql`
         partners {
           name
           link
+          idnumber
+          image {
+            localFile {
+              childImageSharp {
+                resize(width: 180, height: 180) {
+                  src
+                }
+              }
+            }
+          }
         }
         tagline
         organisers
