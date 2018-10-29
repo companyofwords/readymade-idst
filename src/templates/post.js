@@ -11,7 +11,8 @@ export const BlogPostTemplate = ({
   categories,
   tags,
   location,
-  eventsummary,
+  toolsrequired,
+  skilllevel,
   entry,
   entrylink,
   facebookevent,
@@ -44,25 +45,37 @@ export const BlogPostTemplate = ({
                 <div>
              <p>Location: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: location }}></p> 
                 </div>
-              ) : null}
+              ) : ''}
+
+            {toolsrequired && toolsrequired.length ? (
+                <div>
+             <p>Tools Required: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: toolsrequired }}></p> 
+                </div>
+              ) : ''}
+            
+            {skilllevel && skilllevel.length ? (
+                <div>
+             <p>Skill Level: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: skilllevel }}></p> 
+                </div>
+              ) : ''}
 
             {entry && entry.length ? (
                 <div>
              <p>Entry: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: entry }}></p> 
                 </div>
-              ) : null}
+              ) : ''}
 
             {entrylink && entrylink.length ? (
                 <div>
              <p>Entry Link: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: entrylink }}></p> 
                 </div>
-              ) : null}
+              ) : ''}
 
             {facebookevent && facebookevent.length ? (
                 <div>
              <p>Facebook Event: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: facebookevent }}></p> 
                 </div>
-              ) : null}
+              ) : ''}
 
             <p>Organisers: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: organisers }}>
             </p>
@@ -109,7 +122,7 @@ export const BlogPostTemplate = ({
                     ))}
                   </ul>
                 </div>
-              ) : null}
+              ) : ''}
 
               {creators && creators.length ? (
                 <div>
@@ -124,7 +137,7 @@ export const BlogPostTemplate = ({
                     ))}
                   </ul>
                 </div>
-              ) : null}
+              ) : ''}
 
             </div>
           </div>
@@ -152,6 +165,8 @@ const BlogPost = ({ data }) => {
         categories={post.categories}
         tags={post.tags}
         location={post.acf.location}
+        toolsrequired={post.acf.toolsrequired}
+        skilllevel={post.acf.skilllevel}
         eventsummary={post.acf.eventsummary}
         entry={post.acf.entry}
         entrylink={post.acf.entrylink}
@@ -199,6 +214,8 @@ export const pageQuery = graphql`
         slug
       }
       acf {
+        toolsrequired
+        skilllevel
         location
         eventsummary
         entry
