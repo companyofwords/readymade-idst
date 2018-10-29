@@ -10,6 +10,11 @@ export const BlogPostTemplate = ({
   content,
   categories,
   tags,
+  location,
+  eventsummary,
+  entry,
+  entrylink,
+  facebookevent,
   partners,
   creators,
   title,
@@ -34,6 +39,31 @@ export const BlogPostTemplate = ({
             <h2 className="title has-text-weight-bold is-bold-light" dangerouslySetInnerHTML={{ __html: tagline }}>
             </h2>
             <img src={`${frontimage}`} alt={`${frontimagetitle}`}/>
+
+            {location && location.length ? (
+                <div>
+             <p>Location: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: location }}></p> 
+                </div>
+              ) : null}
+
+            {entry && entry.length ? (
+                <div>
+             <p>Entry: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: entry }}></p> 
+                </div>
+              ) : null}
+
+            {entrylink && entrylink.length ? (
+                <div>
+             <p>Entry Link: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: entrylink }}></p> 
+                </div>
+              ) : null}
+
+            {facebookevent && facebookevent.length ? (
+                <div>
+             <p>Facebook Event: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: facebookevent }}></p> 
+                </div>
+              ) : null}
+
             <p>Organisers: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: organisers }}>
             </p>
             <div dangerouslySetInnerHTML={{ __html: content }} />
@@ -121,6 +151,11 @@ const BlogPost = ({ data }) => {
         helmet={<Helmet title={`${post.title} | ${config.siteTitle} | ${config.siteDescription}`} />}
         categories={post.categories}
         tags={post.tags}
+        location={post.acf.location}
+        eventsummary={post.acf.eventsummary}
+        entry={post.acf.entry}
+        entrylink={post.acf.entrylink}
+        facebookevent={post.acf.facebookevent}
         partners={post.acf.partners}
         creators={post.acf.creators}
         title={post.title}
@@ -164,6 +199,11 @@ export const pageQuery = graphql`
         slug
       }
       acf {
+        location
+        eventsummary
+        entry
+        entrylink
+        facebookevent
         partners {
           name
           link

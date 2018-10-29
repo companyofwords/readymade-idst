@@ -83,7 +83,7 @@ const LogoSection = () => (
 
             {data.wordpressAcfOptions.options.weneed && data.wordpressAcfOptions.options.weneed.length ? (
                 <div>
-                  <h4>We Need</h4>
+                  <h4>We Need:</h4>
                   <ul className="taglist">
                     {data.wordpressAcfOptions.options.weneed.map(weneed => (
                       <li key={weneed.itemnumber}>
