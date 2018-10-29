@@ -124,10 +124,16 @@ export const pageQuery = graphql`
             tagline
             organisers
             frontimage {
-              link
               caption
-              url
               title
+              link
+              localFile {
+                childImageSharp {
+                  resize(width: 180, height: 180) {
+                    src
+                  }
+                }
+              }
             }
           }
         }
@@ -149,10 +155,16 @@ export const pageQuery = graphql`
         tagline
         organisers
         frontimage {
-          link
           caption
-          url
           title
+          link
+          localFile {
+            childImageSharp {
+              resize(width: 180, height: 180) {
+                src
+              }
+            }
+          }
         }
       }
     }

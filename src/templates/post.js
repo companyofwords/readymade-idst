@@ -24,7 +24,6 @@ export const BlogPostTemplate = ({
   tagline,
   organisers,
   frontimage,
-  frontimagetitle,
   date,
   helmet,
   slug,
@@ -41,7 +40,12 @@ export const BlogPostTemplate = ({
             </h1>
             <h2 className="title has-text-weight-bold is-bold-light" dangerouslySetInnerHTML={{ __html: tagline }}>
             </h2>
-            <img src={`${frontimage}`} alt={`${frontimagetitle}`}/>
+            
+            {frontimage && frontimage.length ? (
+                <div>
+          <img src={`${frontimage.localFile.childImageSharp.resize.src}`} alt={`${frontimage.title}`}/>
+                </div>
+              ) : ''}
 
             {location && location.length ? (
                 <div>
@@ -192,8 +196,7 @@ const BlogPost = ({ data }) => {
         title={post.title}
         tagline={post.acf.tagline}
         organisers={post.acf.organisers}
-        frontimage={post.acf.frontimage.url}
-        frontimagetitle={post.acf.frontimage.title}
+        frontimage={post.acf.frontimage}
         date={post.date}
         slug={post.slug}
         id={post.id}
@@ -270,9 +273,16 @@ export const pageQuery = graphql`
         tagline
         organisers
         frontimage {
-          url
           caption
-          title
+              title
+              link
+              localFile {
+                childImageSharp {
+                  resize(width: 180, height: 180) {
+                    src
+                  }
+                }
+              }
         }
       }
       tags {
