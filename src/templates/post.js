@@ -13,6 +13,8 @@ export const BlogPostTemplate = ({
   location,
   toolsrequired,
   skilllevel,
+  prize,
+  finishingdate,
   entry,
   entrylink,
   facebookevent,
@@ -59,6 +61,18 @@ export const BlogPostTemplate = ({
                 </div>
               ) : ''}
 
+            {prize && prize.length ? (
+                <div>
+             <p>Prize: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: prize }}></p> 
+                </div>
+              ) : ''}
+
+            {finishingdate && finishingdate.length ? (
+                <div>
+             <p>Finishing Date: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: finishingdate }}></p> 
+                </div>
+              ) : ''}
+            
             {entry && entry.length ? (
                 <div>
              <p>Entry: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: entry }}></p> 
@@ -168,6 +182,8 @@ const BlogPost = ({ data }) => {
         toolsrequired={post.acf.toolsrequired}
         skilllevel={post.acf.skilllevel}
         eventsummary={post.acf.eventsummary}
+        prize={post.acf.prize}
+        finishingdate={post.acf.finishingdate}
         entry={post.acf.entry}
         entrylink={post.acf.entrylink}
         facebookevent={post.acf.facebookevent}
@@ -214,6 +230,8 @@ export const pageQuery = graphql`
         slug
       }
       acf {
+        prize
+        finishingdate
         toolsrequired
         skilllevel
         location
