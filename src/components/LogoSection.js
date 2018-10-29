@@ -26,6 +26,10 @@ const LogoSection = () => (
             copyright
             donatetext
             donatelink
+            weneed {
+              item
+              itemnumber
+            }
             logo {
               localFile {
                 childImageSharp {
@@ -76,6 +80,19 @@ const LogoSection = () => (
             <Link to={`${data.wordpressAcfOptions.options.donatelink}`}>
             <p>{data.wordpressAcfOptions.options.donatetext}</p>
             </Link>
+
+            {data.wordpressAcfOptions.options.weneed && data.wordpressAcfOptions.options.weneed.length ? (
+                <div>
+                  <h4>We Need</h4>
+                  <ul className="taglist">
+                    {data.wordpressAcfOptions.options.weneed.map(weneed => (
+                      <li key={weneed.itemnumber}>
+                      <p>{weneed.item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
         
       </div>
     )}
