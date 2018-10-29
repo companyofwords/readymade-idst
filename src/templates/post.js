@@ -11,6 +11,7 @@ export const BlogPostTemplate = ({
   categories,
   tags,
   partners,
+  creators,
   title,
   tagline,
   organisers,
@@ -80,6 +81,21 @@ export const BlogPostTemplate = ({
                 </div>
               ) : null}
 
+              {creators && creators.length ? (
+                <div>
+                  <h4>Creators</h4>
+                  <ul className="taglist">
+                    {creators.map(creator => (
+                      <li key={`${creator.idnumber}`}>
+                      <img src={creator.image.localFile.childImageSharp.resize.src} alt={creator.name} style={{ width: '88px' }} />
+                        <Link to={`${creator.link}`} dangerouslySetInnerHTML={{ __html: creator.name }}> 
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
             </div>
           </div>
         </div>
@@ -106,6 +122,7 @@ const BlogPost = ({ data }) => {
         categories={post.categories}
         tags={post.tags}
         partners={post.acf.partners}
+        creators={post.acf.creators}
         title={post.title}
         tagline={post.acf.tagline}
         organisers={post.acf.organisers}
@@ -148,6 +165,20 @@ export const pageQuery = graphql`
       }
       acf {
         partners {
+          name
+          link
+          idnumber
+          image {
+            localFile {
+              childImageSharp {
+                resize(width: 180, height: 180) {
+                  src
+                }
+              }
+            }
+          }
+        }
+        creators {
           name
           link
           idnumber

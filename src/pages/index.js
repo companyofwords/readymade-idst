@@ -121,10 +121,6 @@ export const pageQuery = graphql`
             }
           }
           acf {
-            partners {
-              name
-              link
-            }
             tagline
             organisers
             frontimage {
@@ -150,10 +146,6 @@ export const pageQuery = graphql`
         }
       }
       acf {
-        partners {
-          name
-          link
-        }
         tagline
         organisers
         frontimage {
