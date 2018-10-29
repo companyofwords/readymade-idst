@@ -24,6 +24,8 @@ const LogoSection = () => (
             backuptoptext
             allrightsreserved
             copyright
+            donatetext
+            donatelink
             logo {
               localFile {
                 childImageSharp {
@@ -71,6 +73,9 @@ const LogoSection = () => (
             </Link>
             <h2>{data.wordpressAcfOptions.options.sitesubtitle}</h2>
             <p>{data.wordpressAcfOptions.options.sitedescription}</p>
+            <Link to={`${data.wordpressAcfOptions.options.donatelink}`}>
+            <p>{data.wordpressAcfOptions.options.donatetext}</p>
+            </Link>
         
       </div>
     )}
