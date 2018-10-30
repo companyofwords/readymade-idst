@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
+import { css } from 'emotion'
 
 const Footer = () => (
   <StaticQuery
@@ -58,7 +59,12 @@ const Footer = () => (
     `}
     render={data => (
       
-      <div>
+      <div
+  className={css`
+    grid-column: 1 / -1;
+    background-color: green;
+    height: 50px;
+  `}>
         <div>
           <span>© {(new Date().getFullYear())} {data.wordpressAcfOptions.options.copyright}</span>
                 {data.wordpressWpApiMenusMenusItems.items.map((item) =>

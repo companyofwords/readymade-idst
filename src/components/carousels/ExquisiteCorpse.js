@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Carousel from 'nuka-carousel'
-
+import FrontCarousel from './FrontCarousel'
+import PartnerCarousel from './PartnerCarousel'
 import { css } from 'emotion'
 
 const ExquisiteCorpse = () => (
@@ -47,13 +48,14 @@ const ExquisiteCorpse = () => (
     render={data => (
       <div
       className={css`
-      grid-column: 1 / 3;
-      background: #373142;
-      width: 600px;
+      grid-area: 1 / 1 / 3 / span 1;
+      z-index: 1;
+      max-height: 550px;
+      overflow: hidden;
     `}>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
+      <FrontCarousel />
+      <FrontCarousel />
+      <FrontCarousel />
       </div>
       
     )}

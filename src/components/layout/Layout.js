@@ -19,7 +19,7 @@ const TemplateWrapper = ({ children }) => (
     <Navbar />
     <PartnerCarousel />
     <SupporterCarousel />
-    
+    <FrontCarousel />
     <div>{children}</div>
     <Footer/>
     <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>

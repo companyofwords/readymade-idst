@@ -4,10 +4,45 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { FacebookProvider, Like } from 'react-facebook'
 
-const Navbar = () => (
+
+import { css } from 'emotion'
+
+const TagList = () => (
   <StaticQuery
     query={graphql`
       query {
+        wordpressAcfOptions {
+          id
+          wordpress_id
+          options {
+            logo {
+              id
+            }
+            title
+            sitesubtitle
+            sitemaintitle
+            sitedescription
+            sitelongread
+            backuptoptext
+            allrightsreserved
+            copyright
+            donatetext
+            donatelink
+            weneed {
+              item
+              itemnumber
+            }
+            logo {
+              localFile {
+                childImageSharp {
+                  resize(width: 180, height: 180) {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
         wordpressWpApiMenusMenusItems(slug: { eq: "main-nav" }) {
           items {
             title
@@ -34,42 +69,43 @@ const Navbar = () => (
       }
     `}
     render={data => (
-      <div>
-      <Toolbar  variant="dense"> 
-        <div>
+      <div
+      className={css`
+      background: #373142;
+      color: white;
+      padding: 10px;
+    `}>
+        
         <Link to="/">
-              <figure className="image">
-                <img src={logo} alt="IDST!" style={{ width: '88px' }} />
+              <figure>
+                <img src={data.wordpressAcfOptions.options.logo.localFile.childImageSharp.resize.src} alt={data.wordpressAcfOptions.options.title} style={{ width: '88px' }} />
+                
               </figure>
             </Link>
-          </div>
+            <h2>{data.wordpressAcfOptions.options.sitesubtitle}</h2>
+            <p>{data.wordpressAcfOptions.options.sitedescription}</p>
+            <Link to={`${data.wordpressAcfOptions.options.donatelink}`}>
+            <p>{data.wordpressAcfOptions.options.donatetext}</p>
+            </Link>
+            
+            
           
+            {data.wordpressAcfOptions.options.weneed && data.wordpressAcfOptions.options.weneed.length ? (
+                <div>
+                  <h4>We Need:</h4>
+                  <ul className="taglist">
+                    {data.wordpressAcfOptions.options.weneed.map(weneed => (
+                      <li key={weneed.itemnumber}>
+                      <p>{weneed.item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
         
-                {data.wordpressWpApiMenusMenusItems.items.map((item) =>
-                    <Typography color="inherit" noWrap key={`/${item.wordpress_id}`}>
-                        <Link to={`/${item.object_slug}`} style={{
-          }}>
-                            {item.title}
-                        </Link>
-                        
-                            {item.wordpress_children && item.wordpress_children.map((subitem) =>
-                                <span key={item.wordpress_id}>
-                                    <Link to={subitem.object_slug}>
-                                        {subitem.title}
-                                    </Link>
-                                </span>
-                            )}
-                        
-                    </Typography>
-                )}
-             
-      </Toolbar>
-      <FacebookProvider appId="555701548185468">
-      <Like href="http://www.facebook.com/inourmidsts" colorScheme="dark" showFaces share />
-        </FacebookProvider>
       </div>
     )}
   />
 )
 
-export default Navbar
+export default TagList

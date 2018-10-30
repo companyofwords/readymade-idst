@@ -65,7 +65,6 @@ const Navbar = () => (
         
         <Link to="/">
               <figure>
-                <img src={logo} alt="IDST!" style={{ width: '88px' }} />
               </figure>
             </Link>
           

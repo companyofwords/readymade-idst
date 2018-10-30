@@ -71,8 +71,10 @@ const LogoSection = () => (
     render={data => (
       <div
       className={css`
-      grid-column: 4 / -1;
+      grid-column: 2 / -1;
       background: #373142;
+      color: white;
+      padding: 10px;
     `}>
         
         <Link to="/">

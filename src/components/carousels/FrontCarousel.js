@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Carousel from 'nuka-carousel'
 
+import { css } from 'emotion'
 
 const FrontCarousel = () => (
   <StaticQuery
@@ -44,7 +45,11 @@ const FrontCarousel = () => (
       }
     `}
     render={data => (
-    
+      <div
+      className={css`
+      height: 30%;
+      width: 100%;
+    `}>
       <Carousel slidesToShow={3} autoplay={true} autoplayInterval={9000} wrapAround={true}>
       {data.allWordpressWpSlide.edges.map(edge => (
           <div key={edge.node.id}>
@@ -59,7 +64,7 @@ const FrontCarousel = () => (
           </div>
         ))}
       </Carousel>
-      
+      </div>
     )}
   />
 )
