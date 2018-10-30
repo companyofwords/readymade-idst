@@ -4,6 +4,7 @@ import logo from '../images/logo.svg'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { FacebookProvider, Like } from 'react-facebook'
+import TitleSlider from "../components/TitleSlider"
 
 const LogoSection = () => (
   <StaticQuery
@@ -68,7 +69,10 @@ const LogoSection = () => (
     `}
     render={data => (
       <div>
-        
+        <TitleSlider
+            items={[`blazing fast`, `modern`, `beautiful`, `secure`]}
+            color={`lilac`}
+          />
         <Link to="/">
               <figure>
                 <img src={data.wordpressAcfOptions.options.logo.localFile.childImageSharp.resize.src} alt={data.wordpressAcfOptions.options.title} style={{ width: '88px' }} />
