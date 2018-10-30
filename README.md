@@ -5,7 +5,7 @@
 Unashamedly playful, experimental & a learning opportunity for some of our Thursday Tech Group at Macclesfield Community Artspace. 
 
 
-Demo: https://inourmidsts.netlify.com/
+Demo: https://idst.netlify.com
 
 ## Use it now
 
