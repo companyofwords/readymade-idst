@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Carousel from 'nuka-carousel'
 
+import { css } from 'emotion'
 
 const ExquisiteCorpse = () => (
   <StaticQuery
@@ -44,8 +45,12 @@ const ExquisiteCorpse = () => (
       }
     `}
     render={data => (
-    
-      <div>
+      <div
+      className={css`
+      grid-column: 1 / 3;
+      background: #373142;
+      width: 600px;
+    `}>
       <div>1</div>
       <div>2</div>
       <div>3</div>

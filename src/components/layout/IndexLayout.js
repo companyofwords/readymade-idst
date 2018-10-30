@@ -3,20 +3,27 @@ import Helmet from 'react-helmet'
 
 import Navbar from '../Top/Navbar'
 import TopNavbar from '../Top/TopNavbar'
-import FrontCarousel from '../carousels/FrontCarousel'
-import TimeUntil from '../TimeUntil'
-import PartnerCarousel from '../carousels/PartnerCarousel'
-import SupporterCarousel from '../carousels/SupporterCarousel'
+import FrontCarousel from '../Carousels/FrontCarousel'
+import TimeUntil from '../Top/TimeUntil'
+import PartnerCarousel from '../Carousels/PartnerCarousel'
+import SupporterCarousel from '../Carousels/SupporterCarousel'
 import Footer from '../Footer/Footer'
-import TagList from '../TagList'
+import TagList from '../Index/TagList'
 import LogoSection from '../Top/LogoSection'
-import ExquisiteCorpse from '../carousels/ExquisiteCorpse'
+import ExquisiteCorpse from '../Carousels/ExquisiteCorpse'
 import ScrollButton from '../utilities/ScrollToTop'
 
 import config from "../../../data/SiteConfig";
+import { css } from 'emotion'
 
 const TemplateWrapper = ({ children }) => (
-  <div className="containerIndex">
+  <div
+  className={css`
+    display: grid;
+    grid: minmax(100px, auto) / repeat(2, 1fr);
+    background-color: #2196F3;
+  `}>
+
     <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
     <LogoSection className="logoSection" />
     <ExquisiteCorpse className="exquisiteCorpse"/>

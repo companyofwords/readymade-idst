@@ -1,7 +1,7 @@
 import React from "react"
 import { keyframes } from "react-emotion"
 
-export default ({ items, color }) => (
+export default ({ items, color, backgroundColor, position }) => (
   <div
     css={{
       display: `inline`,
@@ -10,7 +10,6 @@ export default ({ items, color }) => (
       "& span": {
         animation: `${topToBottom} 10s linear infinite 0s`,
         opacity: 0,
-        position: `absolute`,
 
         ":nth-child(2)": {
           animationDelay: `2.5s`,
@@ -27,7 +26,7 @@ export default ({ items, color }) => (
     }}
   >
     {items.map(item => (
-      <span key={item} css={{ color }}>
+      <span key={item} css={{ color, backgroundColor, position }}>
         {item}
       </span>
     ))}

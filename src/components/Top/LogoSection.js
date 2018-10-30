@@ -3,7 +3,9 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { FacebookProvider, Like } from 'react-facebook'
-import TitleSlider from "../TitleSlider"
+import TitleSlider from "./TitleSlider"
+
+import { css } from 'emotion'
 
 const LogoSection = () => (
   <StaticQuery
@@ -67,7 +69,11 @@ const LogoSection = () => (
       }
     `}
     render={data => (
-      <div>
+      <div
+      className={css`
+      grid-column: 4 / -1;
+      background: #373142;
+    `}>
         
         <Link to="/">
               <figure>
@@ -84,12 +90,16 @@ const LogoSection = () => (
             <span> <span>We are:</span><TitleSlider
             items={[`Idiot`, `Infantile`, `Ingrates`, `Inbreds`]}
             color={`green`}
+            backgroundColor={`red`}
+            position={`absolute`}
           /></span>
           <br></br>
           <span>
           <TitleSlider
             items={[`Derelict`, `Disasters`, `Dynamite`, `Delinquents`]}
             color={`blue`}
+            backgroundColor={`black`}
+            position={`30px`}
           />
           </span>
           
