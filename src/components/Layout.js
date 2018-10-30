@@ -9,7 +9,6 @@ import PartnerCarousel from './PartnerCarousel'
 import SupporterCarousel from './SupporterCarousel'
 import Footer from '../components/Footer'
 import ScrollButton from '../components/ScrollToTop'
-import './all.sass'
 
 import config from "../../data/SiteConfig";
 

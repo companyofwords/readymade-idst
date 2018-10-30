@@ -12,7 +12,6 @@ import TagList from './TagList'
 import LogoSection from './LogoSection'
 import ExquisiteCorpse from './ExquisiteCorpse'
 import ScrollButton from './ScrollToTop'
-import './all.sass'
 
 import config from "../../data/SiteConfig";
 
