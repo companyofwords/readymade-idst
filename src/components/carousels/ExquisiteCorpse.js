@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Carousel from 'nuka-carousel'
 import FrontCarousel from './FrontCarousel'
-import PartnerCarousel from './PartnerCarousel'
 import { css } from 'emotion'
 
 const ExquisiteCorpse = () => (
