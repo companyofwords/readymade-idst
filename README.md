@@ -1,19 +1,28 @@
-# Gatsby v2 WordPress Starter
+# IDST! Flagship Website 
 
-**NOTE:** This is the Gatsby v2 WordPress starter. It is a work in progress.
+**NOTE:** Started at the same time as the Gatsby v2 WordPress starter, which is a work in progress.
 
-This starter is forked from the
-[gatsby-starter-netlify-cms](https://github.com/netlify-templates/gatsby-starter-netlify-cms)
-and modified to use WordPress instead of netlify-cms.
+Unashamedly playful, experimental & a learning opportunity for some of our Thursday Tech Group at Macclesfield Community Artspace. 
 
-Demo: https://gatsby-v2-starter-wordpress.netlify.com/
+
+Demo: https://inourmidsts.netlify.com/
 
 ## Use it now
 
+    Forked from the experimental Gatsby Wordpress Starter by GatsbyCentral 
+    
     gatsby new name https://github.com/GatsbyCentral/gatsby-starter-wordpress#v2
 
-* Edit `gatsby-config.js`, change `baseUrl`
+* Instructions
   - Make sure you have at least 1 post and 1 page on your WordPress site
-  - Make sure at least 1 post has at least 1 tag
-* Rejoice
-  - File any [issues here](https://github.com/GatsbyCentral/gatsby-starter-wordpress/issues)
+  - Make sure at least 1 post has at least 1 tags
+  - Change to allotted WP source in the `gatsby-config.js` file
+
+* Features
+  - Uses Netlify CI/CD
+  - Uses emotion CSS-in-JS
+  - Nuka-Carousel for Carousels
+  - Material-UI Design
+
+* Issues
+  - File any [issues here](https://github.com/inourmidsts/readymade-idst/issues)
