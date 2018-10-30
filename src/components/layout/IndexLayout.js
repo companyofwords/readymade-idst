@@ -1,19 +1,19 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Navbar from './Navbar'
-import TopNavbar from './TopNavbar'
-import FrontCarousel from './FrontCarousel'
-import TimeUntil from './TimeUntil'
-import PartnerCarousel from './PartnerCarousel'
-import SupporterCarousel from './SupporterCarousel'
-import Footer from './Footer'
-import TagList from './TagList'
-import LogoSection from './LogoSection'
-import ExquisiteCorpse from './ExquisiteCorpse'
-import ScrollButton from './ScrollToTop'
+import Navbar from '../Navbar'
+import TopNavbar from '../TopNavbar'
+import FrontCarousel from '../FrontCarousel'
+import TimeUntil from '../TimeUntil'
+import PartnerCarousel from '../PartnerCarousel'
+import SupporterCarousel from '../SupporterCarousel'
+import Footer from '../Footer'
+import TagList from '../TagList'
+import LogoSection from '../LogoSection'
+import ExquisiteCorpse from '../ExquisiteCorpse'
+import ScrollButton from '../ScrollToTop'
 
-import config from "../../data/SiteConfig";
+import config from "../../../data/SiteConfig";
 
 const TemplateWrapper = ({ children }) => (
   <div className="containerIndex">
