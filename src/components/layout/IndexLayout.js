@@ -10,7 +10,7 @@ import SupporterCarousel from '../Carousels/SupporterCarousel'
 import Footer from '../Footer/Footer'
 import TagList from '../Index/TagList'
 import LogoSection from '../Top/LogoSection'
-import ExquisiteCorpse from '../Carousel/ExquisiteCorpse'
+import ExquisiteCorpse from '../Carousels/ExquisiteCorpse'
 import ScrollButton from '../utilities/ScrollToTop'
 
 import config from "../../../data/SiteConfig";
