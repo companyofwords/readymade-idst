@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import logo from '../images/logo.svg'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { FacebookProvider, Like } from 'react-facebook'
+import TitleSlider from "../TitleSlider"
 
-const Navbar = () => (
+const LogoSection = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -24,6 +24,12 @@ const Navbar = () => (
             backuptoptext
             allrightsreserved
             copyright
+            donatetext
+            donatelink
+            weneed {
+              item
+              itemnumber
+            }
             logo {
               localFile {
                 childImageSharp {
@@ -62,43 +68,47 @@ const Navbar = () => (
     `}
     render={data => (
       <div>
-      <Toolbar  variant="dense" className="toolbar"> 
         
         <Link to="/">
               <figure>
-                <img src={logo} alt="IDST!" style={{ width: '88px' }} />
+                <img src={data.wordpressAcfOptions.options.logo.localFile.childImageSharp.resize.src} alt={data.wordpressAcfOptions.options.title} style={{ width: '88px' }} />
+                
               </figure>
             </Link>
+            <h2>{data.wordpressAcfOptions.options.sitesubtitle}</h2>
+            <p>{data.wordpressAcfOptions.options.sitedescription}</p>
+            <Link to={`${data.wordpressAcfOptions.options.donatelink}`}>
+            <p>{data.wordpressAcfOptions.options.donatetext}</p>
+            </Link>
+            
+            <span> <span>We are:</span><TitleSlider
+            items={[`Idiot`, `Infantile`, `Ingrates`, `Inbreds`]}
+            color={`green`}
+          /></span>
+          <br></br>
+          <span>
+          <TitleSlider
+            items={[`Derelict`, `Disasters`, `Dynamite`, `Delinquents`]}
+            color={`blue`}
+          />
+          </span>
           
-          
+            {data.wordpressAcfOptions.options.weneed && data.wordpressAcfOptions.options.weneed.length ? (
+                <div>
+                  <h4>We Need:</h4>
+                  <ul className="taglist">
+                    {data.wordpressAcfOptions.options.weneed.map(weneed => (
+                      <li key={weneed.itemnumber}>
+                      <p>{weneed.item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
         
-                {data.wordpressWpApiMenusMenusItems.items.map((item) =>
-                    <Typography color="inherit" noWrap key={`/${item.wordpress_id}`}>
-                        <Link to={`/${item.object_slug}`} style={{
-            color: '#000',
-            marginRight: '2em',
-          }}>
-                            {item.title}
-                        </Link>
-                        
-                            {item.wordpress_children && item.wordpress_children.map((subitem) =>
-                                <span key={item.wordpress_id}>
-                                    <Link to={subitem.object_slug}>
-                                        {subitem.title}
-                                    </Link>
-                                </span>
-                            )}
-                        
-                    </Typography>
-                )}
-             
-      </Toolbar>
-      <FacebookProvider appId="555701548185468">
-      <Like href="http://www.facebook.com/inourmidsts" colorScheme="dark" showFaces share />
-        </FacebookProvider>
       </div>
     )}
   />
 )
 
-export default Navbar
+export default LogoSection

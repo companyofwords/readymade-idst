@@ -1,7 +1,7 @@
 import React from "react"
 import { FacebookProvider,  Comments } from "react-facebook"
 
-import config from '../../data/SiteConfig'
+import config from '../../../data/SiteConfig'
 
 const PostComments = props => {
     const { facebook, slug } = props;
