@@ -69,10 +69,7 @@ const LogoSection = () => (
     `}
     render={data => (
       <div>
-        <TitleSlider
-            items={[`blazing fast`, `modern`, `beautiful`, `secure`]}
-            color={`lilac`}
-          />
+        
         <Link to="/">
               <figure>
                 <img src={data.wordpressAcfOptions.options.logo.localFile.childImageSharp.resize.src} alt={data.wordpressAcfOptions.options.title} style={{ width: '88px' }} />
@@ -84,7 +81,19 @@ const LogoSection = () => (
             <Link to={`${data.wordpressAcfOptions.options.donatelink}`}>
             <p>{data.wordpressAcfOptions.options.donatetext}</p>
             </Link>
-
+            
+            <span> <span>We are:</span><TitleSlider
+            items={[`Idiot`, `Infantile`, `Ingrates`, `Inbreds`]}
+            color={`green`}
+          /></span>
+          <br></br>
+          <span>
+          <TitleSlider
+            items={[`Derelict`, `Disasters`, `Dynamite`, `Delinquents`]}
+            color={`blue`}
+          />
+          </span>
+          
             {data.wordpressAcfOptions.options.weneed && data.wordpressAcfOptions.options.weneed.length ? (
                 <div>
                   <h4>We Need:</h4>
