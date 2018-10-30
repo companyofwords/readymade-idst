@@ -3,15 +3,15 @@ import Helmet from 'react-helmet'
 
 import Navbar from '../Navbar'
 import TopNavbar from '../TopNavbar'
-import FrontCarousel from '../FrontCarousel'
+import FrontCarousel from '../carousels/FrontCarousel'
 import TimeUntil from '../TimeUntil'
-import PartnerCarousel from '../PartnerCarousel'
-import SupporterCarousel from '../SupporterCarousel'
+import PartnerCarousel from '../carousels/PartnerCarousel'
+import SupporterCarousel from '../carousels/SupporterCarousel'
 import Footer from '../Footer'
 import TagList from '../TagList'
 import LogoSection from '../LogoSection'
-import ExquisiteCorpse from '../ExquisiteCorpse'
-import ScrollButton from '../ScrollToTop'
+import ExquisiteCorpse from '../carousels/ExquisiteCorpse'
+import ScrollButton from '../utilities/ScrollToTop'
 
 import config from "../../../data/SiteConfig";
 
