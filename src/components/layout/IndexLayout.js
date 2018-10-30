@@ -1,12 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Navbar from '../Top/Navbar'
-import TopNavbar from '../Top/TopNavbar'
-import FrontCarousel from '../Carousels/FrontCarousel'
-import TimeUntil from '../Top/TimeUntil'
-import PartnerCarousel from '../Carousels/PartnerCarousel'
-import SupporterCarousel from '../Carousels/SupporterCarousel'
 import Footer from '../Footer/Footer'
 import TagList from '../Index/TagList'
 import LogoSection from '../Top/LogoSection'
