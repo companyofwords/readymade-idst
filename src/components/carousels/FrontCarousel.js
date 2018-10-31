@@ -37,7 +37,7 @@ const FrontCarousel = () => (
                     title
                     localFile {
                       childImageSharp {
-                        resize(width: 180, height: 180) {
+                        resize(width: 430, height: 190, grayscale: true) {
                           src
                         }
                       }
@@ -52,7 +52,7 @@ const FrontCarousel = () => (
     render={data => (
       <div
       className={css`
-      height: 30%;
+      height: 35%;
       width: 100%;
 
       img {
