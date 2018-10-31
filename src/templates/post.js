@@ -30,15 +30,15 @@ export const BlogPostTemplate = ({
   id
 }) => {
   return (
-    <section className="section">
+    <section className="">
       {helmet || ''}
-      <div className="content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
+      <div className="">
+        <div className="">
+          <div className="">
         
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light" dangerouslySetInnerHTML={{ __html: title }}>
+            <h1 className="" dangerouslySetInnerHTML={{ __html: title }}>
             </h1>
-            <h2 className="title has-text-weight-bold is-bold-light" dangerouslySetInnerHTML={{ __html: tagline }}>
+            <h2 className="" dangerouslySetInnerHTML={{ __html: tagline }}>
             </h2>
             
             {frontimage && frontimage.length ? (
@@ -49,61 +49,61 @@ export const BlogPostTemplate = ({
 
             {location && location.length ? (
                 <div>
-             <p>Location: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: location }}></p> 
+             <p>Location: </p><p className="" dangerouslySetInnerHTML={{ __html: location }}></p> 
                 </div>
               ) : ''}
 
             {toolsrequired && toolsrequired.length ? (
                 <div>
-             <p>Tools Required: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: toolsrequired }}></p> 
+             <p>Tools Required: </p><p className="" dangerouslySetInnerHTML={{ __html: toolsrequired }}></p> 
                 </div>
               ) : ''}
             
             {skilllevel && skilllevel.length ? (
                 <div>
-             <p>Skill Level: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: skilllevel }}></p> 
+             <p>Skill Level: </p><p className="" dangerouslySetInnerHTML={{ __html: skilllevel }}></p> 
                 </div>
               ) : ''}
 
             {prize && prize.length ? (
                 <div>
-             <p>Prize: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: prize }}></p> 
+             <p>Prize: </p><p className="" dangerouslySetInnerHTML={{ __html: prize }}></p> 
                 </div>
               ) : ''}
 
             {finishingdate && finishingdate.length ? (
                 <div>
-             <p>Finishing Date: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: finishingdate }}></p> 
+             <p>Finishing Date: </p><p className="" dangerouslySetInnerHTML={{ __html: finishingdate }}></p> 
                 </div>
               ) : ''}
             
             {entry && entry.length ? (
                 <div>
-             <p>Entry: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: entry }}></p> 
+             <p>Entry: </p><p className="" dangerouslySetInnerHTML={{ __html: entry }}></p> 
                 </div>
               ) : ''}
 
             {entrylink && entrylink.length ? (
                 <div>
-             <p>Entry Link: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: entrylink }}></p> 
+             <p>Entry Link: </p><p className="" dangerouslySetInnerHTML={{ __html: entrylink }}></p> 
                 </div>
               ) : ''}
 
             {facebookevent && facebookevent.length ? (
                 <div>
-             <p>Facebook Event: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: facebookevent }}></p> 
+             <p>Facebook Event: </p><p className="" dangerouslySetInnerHTML={{ __html: facebookevent }}></p> 
                 </div>
               ) : ''}
 
-            <p>Organisers: </p><p className="is-bold-light" dangerouslySetInnerHTML={{ __html: organisers }}>
+            <p>Organisers: </p><p className="" dangerouslySetInnerHTML={{ __html: organisers }}>
             </p>
             <div dangerouslySetInnerHTML={{ __html: content }} />
-            <div style={{ marginTop: `4rem` }}>
+            <div>
               <p>{date}</p>
               {categories && categories.length ? (
                 <div>
                   <h4>Categories</h4>
-                  <ul className="taglist">
+                  <ul className="">
                     {categories.map(category => (
                       <li key={`${category.slug}`}>
                         <Link to={`/categories/${category.slug}/`} dangerouslySetInnerHTML={{ __html: category.name }}> 
@@ -116,7 +116,7 @@ export const BlogPostTemplate = ({
               {tags && tags.length ? (
                 <div>
                   <h4>Tags</h4>
-                  <ul className="taglist">
+                  <ul className="">
                     {tags.map(tag => (
                       <li key={`${tag.slug}`}>
                         <Link to={`/tags/${tag.slug}/`} dangerouslySetInnerHTML={{ __html: tag.name }}> 
@@ -130,7 +130,7 @@ export const BlogPostTemplate = ({
               {partners && partners.length ? (
                 <div>
                   <h4>Partners</h4>
-                  <ul className="taglist">
+                  <ul className="">
                     {partners.map(partner => (
                       <li key={`${partner.idnumber}`}>
                       <img src={partner.image.localFile.childImageSharp.resize.src} alt={partner.name} style={{ width: '88px' }} />
@@ -145,7 +145,7 @@ export const BlogPostTemplate = ({
               {creators && creators.length ? (
                 <div>
                   <h4>Creators</h4>
-                  <ul className="taglist">
+                  <ul className="">
                     {creators.map(creator => (
                       <li key={`${creator.idnumber}`}>
                       <img src={creator.image.localFile.childImageSharp.resize.src} alt={creator.name} style={{ width: '88px' }} />

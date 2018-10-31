@@ -26,9 +26,10 @@ export default class IndexPage extends React.Component {
     const { edges: posts } = data.allWordpressPost
     const { expanded } = this.state
     
+    console.table(data.allWordpressPost)
 
     return (
-      <IndexLayout>
+  <IndexLayout>
           <div
   className={css`
     grid-column: 1 / 4;
@@ -95,6 +96,8 @@ export default class IndexPage extends React.Component {
         </div>
       </IndexLayout>
     )
+
+    
   }
 }
 
@@ -123,6 +126,14 @@ export const pageQuery = graphql`
             }
           }
           acf {
+            finishingdate
+            toolsrequired
+            skilllevel
+            location
+            eventsummary
+            entry
+            entrylink
+            facebookevent
             tagline
             organisers
             frontimage {
@@ -132,7 +143,7 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 800) {
-                    ...GatsbyImageSharpFluid_withWebp
+                    src
                   }
                 }
               }
@@ -140,7 +151,7 @@ export const pageQuery = graphql`
           }
         }
       }
-    }
+  }
     wordpressPost{
       id
       title
