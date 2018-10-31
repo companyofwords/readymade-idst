@@ -6,13 +6,13 @@ const theme = createMuiTheme({
   base: {
     colors: {
       background: colors.background,
-      text: colors.gray,
-      link: colors.accent,
-      linkHover: Color(colors.accent)
+      text: colors.text,
+      link: colors.link,
+      linkHover: Color(colors.link)
         .lighten(0.1)
         .string(),
-      accent: colors.accent,
-      lines: colors.superLightGray
+      accent: colors.link,
+      lines: colors.border
     },
     sizes: {
       linesMargin: "20px"
@@ -25,12 +25,12 @@ const theme = createMuiTheme({
   },
   info: {
     colors: {
-      text: colors.dark,
+      text: colors.text,
       background: colors.background,
-      socialIcons: colors.dark,
-      socialIconsHover: colors.accent,
-      menuLink: colors.gray,
-      menuLinkHover: colors.accent
+      socialIcons: colors.secondary,
+      socialIconsHover: colors.link,
+      menuLink: colors.secondary,
+      menuLinkHover: colors.secondary
     },
     sizes: {
       width: 320,
@@ -45,9 +45,9 @@ const theme = createMuiTheme({
   navigator: {
     colors: {
       background: colors.background,
-      postsListItemLink: colors.gray,
-      postsListItemLinkHover: colors.accent,
-      postsHeader: colors.gray
+      postsListItemLink: colors.secondary,
+      postsListItemLinkHover: colors.link,
+      postsHeader: colors.secondary
     },
     sizes: {
       closedHeight: 80,
@@ -60,15 +60,15 @@ const theme = createMuiTheme({
   main: {
     colors: {
       background: colors.background,
-      title: colors.gray,
-      subTitle: colors.gray,
-      meta: colors.gray,
-      content: colors.gray,
-      footer: colors.gray,
-      contentHeading: colors.gray,
-      blockquoteFrame: colors.lightGray,
-      link: colors.accent,
-      linkHover: colors.dark,
+      title: colors.headertitle,
+      subTitle: colors.headertitle,
+      meta: colors.headertitle,
+      content: colors.headertitle,
+      footer: colors.headertitle,
+      contentHeading: colors.headertitle,
+      blockquoteFrame: colors.background,
+      link: colors.secondary,
+      linkHover: colors.link,
       fbCommentsColorscheme: "light"
     },
     sizes: {
@@ -113,12 +113,12 @@ const theme = createMuiTheme({
   },
   footer: {
     colors: {
-      background: colors.white,
-      text: Color(colors.gray)
+      background: colors.background,
+      text: Color(colors.text)
         .lighten(0.5)
         .string(),
-      link: colors.accent,
-      linkHover: Color(colors.accent)
+      link: colors.link,
+      linkHover: Color(colors.link)
         .lighten(0.2)
         .string()
     },
@@ -132,8 +132,8 @@ const theme = createMuiTheme({
   bars: {
     colors: {
       background: colors.background,
-      icon: colors.dark,
-      text: colors.gray
+      icon: colors.primary,
+      text: colors.secondary
     },
     sizes: {
       actionsBar: 60,
@@ -146,14 +146,14 @@ const theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: colors.accent
+      main: colors.link
     },
     action: {
       hover: "rgba(0, 0, 0, 0.01)"
     }
   },
   typography: {
-    fontFamily: `Lora, sans-serif`,
+    fontFamily: `Permanent Marker, sans-serif`,
     fontSize: 16
   }
 });
