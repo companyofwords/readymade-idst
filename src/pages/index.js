@@ -8,6 +8,8 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
 import Typography from '@material-ui/core/Typography'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
+import { css } from 'emotion'
+
 export default class IndexPage extends React.Component {
   state = {
     expanded: null,
@@ -27,7 +29,11 @@ export default class IndexPage extends React.Component {
 
     return (
       <IndexLayout>
-        
+          <div
+  className={css`
+    grid-column: 1 / 4;
+    font-family: 'Permanent Marker';
+  `}>
             {posts.map(({ node: post }) => (
               
               <div key={post.id}>
@@ -39,11 +45,10 @@ export default class IndexPage extends React.Component {
                   <Link to={post.slug}>
                     {post.title}
                   </Link>
-                  <span> &bull; </span>
-                  <small>{post.date}</small>
                 </h1>
-                <br/>
-                <h1><small>{post.date}</small></h1>
+
+                  <p>{post.date}</p>
+                
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                 <img src={`${post.acf.frontimage.localFile.childImageSharp.resize.src}`}/>
@@ -67,11 +72,8 @@ export default class IndexPage extends React.Component {
                   <Link to={post.slug}>
                     {post.title}
                   </Link>
-                  <span> &bull; </span>
                   <small>{post.date}</small>
                 </h1>
-                <br/>
-                <h1><small>{post.date}</small></h1>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
             
@@ -90,7 +92,7 @@ export default class IndexPage extends React.Component {
               </div>
                   
             ))}
-
+        </div>
       </IndexLayout>
     )
   }

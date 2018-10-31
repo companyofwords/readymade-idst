@@ -14,7 +14,7 @@ const TemplateWrapper = ({ children }) => (
   <div
   className={css`
     display: grid;
-    grid: minmax(50px, 100%) / repeat(2, 2fr 1fr);
+    grid: minmax(50px, auto ) / repeat(2, 2fr 1fr);
     background-color: #2196F3;
 
     .mainIndexContent {
