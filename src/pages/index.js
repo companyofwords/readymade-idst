@@ -7,6 +7,10 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
 import Typography from '@material-ui/core/Typography'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import Button from '@material-ui/core/Button';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import { css } from 'emotion'
 
@@ -45,11 +49,17 @@ export default class IndexPage extends React.Component {
 
     a {
       text-decoration: none;
+      color: #373142;
     }
 
     p {
       font-family: "Varela";
       background-color: white;
+      color: #373142;
+    }
+
+    .buttonfooter {
+      margin-top: 40px;
     }
   `}>
             {posts.map(({ node: post }) => (
@@ -58,10 +68,8 @@ export default class IndexPage extends React.Component {
     
               <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)} style={{backgroundImage: `url("${post.acf.frontimage.localFile.childImageSharp.resize.src}")`, backgroundSize: `cover`}}>
               
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon enter="true" exit="true" />}>
-              { post.acf.frontimage.localFile.childImageSharp.resize.src && post.acf.frontimage.localFile.childImageSharp.resize.src.length ? (
-                <img src={post.acf.frontimage.localFile.childImageSharp.resize.src} style={{ width: '30px', height: '10px' }} />
-                ) : ''}
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon style={{ width: '30px', height: '30px', fill: '#373142' }} />}>
+              
                 
               <div>  
               <h1>
@@ -71,9 +79,8 @@ export default class IndexPage extends React.Component {
                 </h1>
                 
                 {post.acf.finishingdate && post.acf.finishingdate.length ? (
-                <div>
              <p className="" dangerouslySetInnerHTML={{ __html: post.acf.finishingdate }}></p> 
-                </div>
+                
               ) : ''}
                 </div>
                 </ExpansionPanelSummary>
@@ -85,9 +92,11 @@ export default class IndexPage extends React.Component {
                     }}
                   />
                   
-                  <Link to={post.slug}>
+                  <div className="buttonfooter">
+                  <Button href={post.slug} variant="contained" color="primary" aria-label="Keep Reading">
                     Keep Reading →
-                  </Link>
+                  </Button>
+                  </div>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
               
