@@ -31,19 +31,6 @@ const logogrid = css`
           display: grid;
           grid-template-columns: 1fr 1fr;
 
-        h2, h3, h4 {
-          font-family: "Permanent Marker";
-          color: white;
-          font-size: 1.8em;
-          line-height: 0.7em;
-          padding-bottom: 0;
-          background: red;
-        }
-
-        p, span, li {
-          text-align: justify;
-          font-family: "Varela";
-        }
         
         .${mainlogo} {
           grid-column: 1 / 2;

@@ -1,6 +1,6 @@
 import { injectGlobal } from 'react-emotion'
 import theme from "../styles/theme"
-import globals from "../styles/globals"
+
 
 injectGlobal`
   html, body, #root {
@@ -15,10 +15,42 @@ injectGlobal`
     display: "block";
   }
 
-  p {
-      font-family: ${theme.base.fonts.unstyledFamily};
-      text-decoration: underline;
-      color: red;
-      background: ${theme.base.colors.background};
+  h2 {
+    background: ${theme.base.colors.headerbackground};
+    color: #373142;
+    text-decoration: underline;
   }
+
+  p, span, li {
+      font-family: ${theme.base.fonts.styledFamily};
+      text-decoration: underline;
+      color: ${theme.base.colors.text};
+      background: ${theme.base.colors.background};
+      text-align: justify;
+
+  }
+
+  h1 {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: white;
+    background: red;
+
+  }
+
+  h2, h3, h4 {
+    font-family: "Permanent Marker";
+    color: white;
+    font-size: 1.8em;
+    line-height: 0.7em;
+    padding-bottom: 0;
+    background: red;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${theme.base.colors.secondary};
+  }
+
 `

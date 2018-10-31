@@ -39,25 +39,6 @@ export default class IndexPage extends React.Component {
     grid-column: 1 / 4;
     font-family: 'Permanent Marker';
 
-    h1 {
-      background-color: white;
-      padding-left: 10px;
-      padding-right: 10px;
-      text-decoration: none;
-      color: #373142;
-    }
-
-    a {
-      text-decoration: none;
-      color: #373142;
-    }
-
-    p {
-      font-family: "Varela";
-      background-color: white;
-      color: #373142;
-    }
-
     .buttonfooter {
       margin-top: 40px;
     }

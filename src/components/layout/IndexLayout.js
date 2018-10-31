@@ -12,7 +12,7 @@ import { css } from 'emotion'
 
 import { ThemeProvider, withTheme } from 'emotion-theming';
 
-import mytheme from '../../styles/globalStyles';
+import '../../styles/globalStyles';
 import globals from "../../styles/globals";
 
 const nightTheme = {
@@ -37,7 +37,6 @@ const TemplateWrapper = ({ children, globals }) => (
 
     .footer {
       grid-column: 1 / -1;
-      background-color: green;
     }
 
   `}>
