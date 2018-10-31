@@ -12,7 +12,6 @@ const FrontCarousel = () => (
           items {
             title
             object_slug
-            url
           }
         }
         allWordpressPage(sort: { fields: wordpress_id }, limit: 5) {
@@ -35,8 +34,14 @@ const FrontCarousel = () => (
                     id
                     link
                     caption
-                    source_url
                     title
+                    localFile {
+                      childImageSharp {
+                        resize(width: 180, height: 180) {
+                          src
+                        }
+                      }
+                    }
                           }
                   }
                 }
@@ -57,7 +62,7 @@ const FrontCarousel = () => (
             color: '#000',
             marginRight: '2em',
           }}>
-          <img key={edge.node.acf.frontimage.id} src={`${edge.node.acf.frontimage.source_url}`} alt={`${edge.node.title}`}/>
+          <img key={edge.node.acf.frontimage.id} src={`${edge.node.acf.frontimage.localFile.childImageSharp.resize.src}`} alt={`${edge.node.title}`}/>
           <h1>{edge.node.title}</h1>
           
           </Link>

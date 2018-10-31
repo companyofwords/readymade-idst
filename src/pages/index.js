@@ -38,21 +38,28 @@ export default class IndexPage extends React.Component {
             {posts.map(({ node: post }) => (
               
               <div key={post.id}>
-              { post.acf.frontimage && post.acf.frontimage.length ? (
-              <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)} style={{backgroundImage: `url("${post.acf.frontimage.localFile.childImageSharp.resize.src}")`}}>
+    
+              <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)}>
+              
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon enter="true" exit="true" />}>
               
-                <h1>
+              <h1>
                   <Link to={post.slug}>
-                    {post.title}
+                    <span className="" dangerouslySetInnerHTML={{ __html: post.title }}></span> 
                   </Link>
                 </h1>
+                { post.acf.frontimage.localFile.childImageSharp.resize.src && post.acf.frontimage.localFile.childImageSharp.resize.src.length ? (
+                <img src={post.acf.frontimage.localFile.childImageSharp.resize.src} style={{ width: '88px' }} />
+                ) : ''}
 
-                  <p>{post.date}</p>
-                
+                {post.acf.finishingdate && post.acf.finishingdate.length ? (
+                <div>
+             <p className="" dangerouslySetInnerHTML={{ __html: post.acf.finishingdate }}></p> 
+                </div>
+              ) : ''}
+
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                <img src={`${post.acf.frontimage.localFile.childImageSharp.resize.src}`}/>
             
                   <div
                     dangerouslySetInnerHTML={{
@@ -65,31 +72,7 @@ export default class IndexPage extends React.Component {
                   </Link>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
-              ) : ( //or without ACF
-                <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)}>
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon enter="true" exit="true" />}>
               
-                <h1>
-                  <Link to={post.slug}>
-                    {post.title}
-                  </Link>
-                  <small>{post.date}</small>
-                </h1>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-            
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: post.excerpt.replace(/<p class="link-more.*/, ''),
-                    }}
-                  />
-                  
-                  <Link to={post.slug}>
-                    Keep Reading →
-                  </Link>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-              )}
               </div>
                   
             ))}
@@ -142,7 +125,7 @@ export const pageQuery = graphql`
               link
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 800) {
+                  resize(width: 180, height: 180) {
                     src
                   }
                 }
@@ -173,9 +156,9 @@ export const pageQuery = graphql`
           link
           localFile {
             childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+                resize(width: 180, height: 180) {
+                  src
+                }
             }
           }
         }
