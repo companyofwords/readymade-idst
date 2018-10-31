@@ -34,6 +34,18 @@ export default class IndexPage extends React.Component {
   className={css`
     grid-column: 1 / 4;
     font-family: 'Permanent Marker';
+
+    h1 {
+      background-color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-decoration: none;
+      color: #373142;
+    }
+
+    a {
+      text-decoration: none;
+    }
   `}>
             {posts.map(({ node: post }) => (
               
