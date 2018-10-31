@@ -4,7 +4,8 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout/Layout'
 import config from "../../data/SiteConfig"
-import PostComments from "../components/Post/PostComments";
+import PostComments from "../components/Post/PostComments"
+import Chip from '@material-ui/core/Chip'
 
 export const BlogPostTemplate = ({
   content,
@@ -103,27 +104,38 @@ export const BlogPostTemplate = ({
               {categories && categories.length ? (
                 <div>
                   <h4>Categories</h4>
-                  <ul className="">
+                  
                     {categories.map(category => (
-                      <li key={`${category.slug}`}>
-                        <Link to={`/categories/${category.slug}/`} dangerouslySetInnerHTML={{ __html: category.name }}> 
-                        </Link>
-                      </li>
+                      <span key={category.id}>
+
+                      <Chip 
+                      label={category.name}
+                      component="a"
+                      href={`/tags/${category.slug}/`}
+                      clickable
+                      />  
+                      </span>
                     ))}
-                  </ul>
+                
                 </div>
               ) : null}
               {tags && tags.length ? (
                 <div>
                   <h4>Tags</h4>
-                  <ul className="">
+                  
                     {tags.map(tag => (
-                      <li key={`${tag.slug}`}>
-                        <Link to={`/tags/${tag.slug}/`} dangerouslySetInnerHTML={{ __html: tag.name }}> 
-                        </Link>
-                      </li>
+                      
+                      <span key={tag.id}>
+
+                      <Chip 
+                      label={tag.name}
+                      component="a"
+                      href={`/tags/${tag.slug}/`}
+                      clickable
+                      />  
+                      </span>
                     ))}
-                  </ul>
+                  
                 </div>
               ) : null}
               

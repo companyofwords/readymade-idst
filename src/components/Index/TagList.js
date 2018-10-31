@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
 import { FacebookProvider, Like } from 'react-facebook'
 import Chip from '@material-ui/core/Chip'
 
@@ -98,7 +96,7 @@ const TagList = () => (
         className={chipstyle}
         label={tag.name}
         component="a"
-        href={`/tags/${tag.slug}/`}
+        href={`/categories/${tag.slug}/`}
         clickable
       />  
       </span>
