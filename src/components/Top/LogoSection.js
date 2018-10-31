@@ -48,6 +48,7 @@ const logogrid = css`
         .${idstgrid} {
 
           display:grid;
+          grid-column: 1 / -1;
           grid-template-columns: repeat(4, 1fr);
         }
 
@@ -132,18 +133,8 @@ const LogoSection = () => (
     `}
     render={data => (
       <div className={logogrid}>
-            <div className={mainlogo}>
-              <Link to="/">
-                <img src={data.wordpressAcfOptions.options.logo.localFile.childImageSharp.resize.src} alt={data.wordpressAcfOptions.options.title} />
-                </Link> 
-            <div className={tagline}>
-            <h2>{data.wordpressAcfOptions.options.sitesubtitle}</h2>
-            <p>{data.wordpressAcfOptions.options.sitedescription}</p>
-            </div> 
-            </div>
-          
-            <div className={logosidebar}>
-            <div className={idstgrid}>
+
+      <div className={idstgrid}>
             <div className={idstgrids}>
             
             <span> <TitleSlider
@@ -210,6 +201,20 @@ const LogoSection = () => (
             </div>
             
             </div>
+
+
+            <div className={mainlogo}>
+              <Link to="/">
+                <img src={data.wordpressAcfOptions.options.logo.localFile.childImageSharp.resize.src} alt={data.wordpressAcfOptions.options.title} />
+                </Link> 
+            <div className={tagline}>
+            <h2>{data.wordpressAcfOptions.options.sitesubtitle}</h2>
+            <p>{data.wordpressAcfOptions.options.sitedescription}</p>
+            </div> 
+            </div>
+          
+            <div className={logosidebar}>
+            
             
           
           
