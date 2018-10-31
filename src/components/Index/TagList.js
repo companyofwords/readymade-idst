@@ -6,11 +6,9 @@ import Chip from '@material-ui/core/Chip'
 import { css } from 'emotion'
 
 
-const chipstyle = css`
-`
+const chipstyle = css``
 
-const fbooklikes = css`
-`
+const fbooklikes = css``
 
 const paragraph = css`
           padding: 0 20px 20px;
@@ -21,6 +19,7 @@ const paragraph = css`
           color: white;
           font-size: 1.8em;
         }
+        border-left: 2px solid black;
         
         .${fbooklikes} {
           padding:20px;

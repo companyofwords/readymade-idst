@@ -1,26 +1,30 @@
 import React from "react"
 import { keyframes } from "react-emotion"
 
-export default ({ items, color, backgroundColor, position }) => (
+export default ({ items, color, backgroundColor, position, delay, delay2, delay3, delay4 }) => (
   <div
     css={{
       display: `inline`,
       textIndent: `8px`,
+      
 
       "& span": {
-        animation: `${topToBottom} 10s linear infinite 0s`,
+        animation: `${topToBottom} 10s linear infinite ${delay}`,
         opacity: 0,
+        paddingRight: `8px`,
+        paddingLeft: `8px`,
+        fontFamily: 'Permanent Marker',
 
         ":nth-child(2)": {
-          animationDelay: `2.5s`,
+          animationDelay: delay2,
         },
 
         ":nth-child(3)": {
-          animationDelay: `5s`,
+          animationDelay: delay3,
         },
 
         ":nth-child(4)": {
-          animationDelay: `7.5s`,
+          animationDelay: delay4,
         },
       },
     }}

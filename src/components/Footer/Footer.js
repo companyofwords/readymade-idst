@@ -63,7 +63,7 @@ const Footer = () => (
   className={css`
     grid-column: 1 / -1;
     font-family: "Varela";
-    background-color: green;
+    background-color: #373142;
     border-top: 2px solid black;
     height: 50px;
     display: grid;
@@ -75,11 +75,17 @@ const Footer = () => (
 
   span {
     margin-right: 15px;
+    color: white;
   }
 
   a {
     text-decoration: none;
     color: white;
+
+    &:hover {
+      color: red;
+      border-bottom: 1px solid red;
+    }
   }
 
   `}>
