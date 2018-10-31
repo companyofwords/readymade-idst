@@ -14,6 +14,7 @@ export default ({ items, color, backgroundColor, position, delay, delay2, delay3
         paddingRight: `8px`,
         paddingLeft: `8px`,
         fontFamily: 'Permanent Marker',
+        fontSize: '1.8rem',
 
         ":nth-child(2)": {
           animationDelay: delay2,
