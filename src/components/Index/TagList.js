@@ -13,13 +13,14 @@ const fbooklikes = css``
 const paragraph = css`
           padding: 0 20px 20px;
           max-width: 240px;
+          border-left: 2px solid black;
 
         h4 {
           font-family: "Permanent Marker";
           color: white;
           font-size: 1.8em;
         }
-        border-left: 2px solid black;
+        
         
         .${fbooklikes} {
           padding:20px;
