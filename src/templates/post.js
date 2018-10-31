@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/layout/Layout'
+import IndexLayout from '../components/layout/IndexLayout'
 import config from "../../data/SiteConfig"
 import PostComments from "../components/Post/PostComments"
 import Chip from '@material-ui/core/Chip'
@@ -188,7 +188,7 @@ const BlogPost = ({ data }) => {
   const { wordpressPost: post } = data
 
   return (
-    <Layout>
+    <IndexLayout>
       <BlogPostTemplate
         content={post.content}
         helmet={<Helmet title={`${post.title} | ${config.siteTitle} | ${config.siteDescription}`} />}
@@ -213,7 +213,7 @@ const BlogPost = ({ data }) => {
         slug={post.slug}
         id={post.id}
       />
-    </Layout>
+    </IndexLayout>
   )
 }
 

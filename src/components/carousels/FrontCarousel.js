@@ -54,19 +54,14 @@ const FrontCarousel = () => (
       className={css`
       height: 30%;
       width: 100%;
+
+      img {
+        height: 100%;
+      }
     `}>
-      <Carousel slidesToShow={3} autoplay={true} autoplayInterval={9000} wrapAround={true}>
+      <Carousel slidesToShow={1} autoplay={true} autoplayInterval={9000} wrapAround={true} withoutControls={true} width="100%">
       {data.allWordpressWpSlide.edges.map(edge => (
-          <div key={edge.node.id}>
-          <Link to={edge.node.acf.link} style={{
-            color: '#000',
-            marginRight: '2em',
-          }}>
-          <img key={edge.node.acf.frontimage.id} src={`${edge.node.acf.frontimage.localFile.childImageSharp.resize.src}`} alt={`${edge.node.title}`}/>
-          <h1>{edge.node.title}</h1>
-          
-          </Link>
-          </div>
+          <img key={edge.node.id} src={`${edge.node.acf.frontimage.localFile.childImageSharp.resize.src}`} alt={`${edge.node.title}`}/>
         ))}
       </Carousel>
       </div>

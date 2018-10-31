@@ -103,7 +103,7 @@ const TagList = () => (
                 )}
       <div className={fbooklikes}>
       <FacebookProvider appId="555701548185468">
-      <Like href="http://www.facebook.com/inourmidsts" colorScheme="dark" showFaces shares width="140px"/>
+      <Like href="http://www.facebook.com/inourmidsts" colorScheme="dark" shares width="140px"/>
         </FacebookProvider>
         </div>           
       </div>
