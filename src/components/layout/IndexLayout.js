@@ -10,7 +10,21 @@ import ScrollButton from '../utilities/ScrollToTop'
 import config from "../../../data/SiteConfig";
 import { css } from 'emotion'
 
-const TemplateWrapper = ({ children }) => (
+import { ThemeProvider, withTheme } from 'emotion-theming';
+
+import mytheme from '../../styles/globalStyles';
+import globals from "../../styles/globals";
+
+const nightTheme = {
+  skyColor: '#2c3e50',
+  celestialObjectColor: '#bdc3c7',
+  celestialObjectBorderColor: '#eaeff2'
+}
+
+
+const TemplateWrapper = ({ children, globals }) => (
+  <ThemeProvider theme={nightTheme}>
+  
   <div
   className={css`
     display: grid;
@@ -36,6 +50,7 @@ const TemplateWrapper = ({ children }) => (
     <Footer className="footer"/>
     <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
   </div>
+  </ThemeProvider>
 )
 
 export default TemplateWrapper

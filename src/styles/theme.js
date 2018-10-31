@@ -18,8 +18,8 @@ const theme = createMuiTheme({
       linesMargin: "20px"
     },
     fonts: {
-      unstyledFamily: `Lora`,
-      styledFamily: "Lora",
+      unstyledFamily: `Permanent Marker`,
+      styledFamily: "Permanent Marker",
       styledFonts: "300,400,600"
     }
   },
