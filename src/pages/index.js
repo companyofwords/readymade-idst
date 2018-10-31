@@ -46,6 +46,11 @@ export default class IndexPage extends React.Component {
     a {
       text-decoration: none;
     }
+
+    p {
+      font-family: "Varela";
+      background-color: white;
+    }
   `}>
             {posts.map(({ node: post }) => (
               

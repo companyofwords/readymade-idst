@@ -62,21 +62,39 @@ const Footer = () => (
       <div
   className={css`
     grid-column: 1 / -1;
+    font-family: "Varela";
     background-color: green;
+    border-top: 2px solid black;
     height: 50px;
+    display: grid;
+  
+  div {
+    align-self: center;
+  justify-self: center;
+  }
+
+  span {
+    margin-right: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
   `}>
         <div>
           <span>© {(new Date().getFullYear())} {data.wordpressAcfOptions.options.copyright}</span>
                 {data.wordpressWpApiMenusMenusItems.items.map((item) =>
                     <span key={`/${item.wordpress_id}`}>
                         <Link to={`/${item.object_slug}`}>
-                             | {item.title} |
+                              {item.title} 
                         </Link>
                         
                             {item.wordpress_children && item.wordpress_children.map((subitem) =>
                                 <span key={item.wordpress_id}>
                                     <Link to={subitem.object_slug}>
-                                        {subitem.title} |
+                                        {subitem.title} 
                                     </Link>
                                 </span>
                             )}
