@@ -42,22 +42,23 @@ export default class IndexPage extends React.Component {
               <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)}>
               
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon enter="true" exit="true" />}>
-              
+              { post.acf.frontimage.localFile.childImageSharp.resize.src && post.acf.frontimage.localFile.childImageSharp.resize.src.length ? (
+                <img src={post.acf.frontimage.localFile.childImageSharp.resize.src} style={{ width: '30px', height: '10px' }} />
+                ) : ''}
+                
+              <div>  
               <h1>
                   <Link to={post.slug}>
                     <span className="" dangerouslySetInnerHTML={{ __html: post.title }}></span> 
                   </Link>
                 </h1>
-                { post.acf.frontimage.localFile.childImageSharp.resize.src && post.acf.frontimage.localFile.childImageSharp.resize.src.length ? (
-                <img src={post.acf.frontimage.localFile.childImageSharp.resize.src} style={{ width: '88px' }} />
-                ) : ''}
-
+                
                 {post.acf.finishingdate && post.acf.finishingdate.length ? (
                 <div>
              <p className="" dangerouslySetInnerHTML={{ __html: post.acf.finishingdate }}></p> 
                 </div>
               ) : ''}
-
+                </div>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
             
@@ -125,7 +126,7 @@ export const pageQuery = graphql`
               link
               localFile {
                 childImageSharp {
-                  resize(width: 180, height: 180) {
+                  resize(width: 600, height: 180) {
                     src
                   }
                 }
