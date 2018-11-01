@@ -7,10 +7,12 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
 import Typography from '@material-ui/core/Typography'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import Button from '@material-ui/core/Button';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
+//import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
+import Button from "../components/utilities/button"
 
 import { css } from 'emotion'
 
@@ -74,9 +76,10 @@ export default class IndexPage extends React.Component {
                   />
                   
                   <div className="buttonfooter">
-                  <Button href={post.slug} variant="contained" color="primary" aria-label="Keep Reading">
-                    Keep Reading →
-                  </Button>
+                  <Button large to={post.slug} icon={<ArrowForwardIcon />}>
+        Read On
+      </Button>
+
                   </div>
                 </ExpansionPanelDetails>
               </ExpansionPanel>

@@ -66,4 +66,9 @@ injectGlobal`
     color: ${theme.base.colors.secondary};
   }
 
+  Button {
+    margin: 20px;
+    background: ${theme.base.colors.link};
+    
+  }
 `
