@@ -44,7 +44,7 @@ module.exports = {
       options: {
         fonts: [
           `permanent marker`,
-          `varela` // you can also specify font weights and styles
+          `special elite` // you can also specify font weights and styles
         ]
       }
     },
