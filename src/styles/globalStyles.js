@@ -17,7 +17,7 @@ injectGlobal`
 
   h2 {
     background: ${theme.base.colors.headerbackground};
-    color: #373142;
+    color: ${theme.base.colors.headertitle};
     text-decoration: underline;
   }
 
