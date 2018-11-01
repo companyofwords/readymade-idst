@@ -66,9 +66,9 @@ injectGlobal`
     color: ${theme.base.colors.secondary};
   }
 
-  Button {
-    margin: 20px;
-    background: ${theme.base.colors.link};
-    
+  .submit {
+    margin: "1em 0";
+    background: "rgb(252,79,8)";
+    //width: "100%";
   }
 `
