@@ -35,7 +35,7 @@ injectGlobal`
     padding-right: 10px;
     text-decoration: none;
     color: white;
-    background: red;
+    background: ${theme.base.colors.link};
 
   }
 
