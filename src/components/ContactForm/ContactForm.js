@@ -170,4 +170,4 @@ ContactForm.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default injectSheet(styles)(ContactForm);
+export default ContactForm

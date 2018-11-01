@@ -38,6 +38,8 @@
     "react-emotion": "^9.2.12",
     "react-facebook": "^6.0.15",
     "react-helmet": "^5.2.0",
+    "react-material-ui-form-validator": "^2.0.2",
+    "react-obfuscate": "^2.1.10",
     "react-reveal": "^1.2.2",
     "uuid": "^3.2.1"
   },

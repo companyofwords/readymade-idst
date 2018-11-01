@@ -11573,6 +11573,13 @@ react-facebook@^6.0.15:
     can-use-dom "^0.1.0"
     react-spinner-children "^1.0.8"
 
+react-form-validator-core@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/react-form-validator-core/-/react-form-validator-core-0.5.0.tgz#dfb669bd9475b7dd1c275096f7f3414a6fb3077a"
+  integrity sha512-o9L/ulTXaCPnt6wHByc31xGqcLzJFAXNXqlyFqkrXkCmMq7h5JKyOH80p2jviYn0DZ3YN1nK+7uccK1K+Lh8mA==
+  dependencies:
+    react-lifecycles-compat "^3.0.2"
+
 react-helmet@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"
@@ -11600,6 +11607,13 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-material-ui-form-validator@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-material-ui-form-validator/-/react-material-ui-form-validator-2.0.2.tgz#6e1f4178a556805e86561904dcf7a5a75371cec3"
+  integrity sha512-L7QAvr+f4uHIjlEgjq5dCnLTEQKSsvBhDkkP835D7Oba6zcezHGlE7K1PKf7ia7jIZOmzufiUTBSO2M4K/PMVQ==
+  dependencies:
+    react-form-validator-core "0.5.0"
+
 react-move@^2.7.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/react-move/-/react-move-2.8.0.tgz#63deaf6a0e58ca6769357abfcd91dde44d83a596"
@@ -11607,6 +11621,11 @@ react-move@^2.7.0:
   dependencies:
     d3-interpolate "^1.2.0"
     d3-timer "^1.0.4"
+
+react-obfuscate@^2.1.10:
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/react-obfuscate/-/react-obfuscate-2.1.10.tgz#a6a34b9c685d1f5d9c82368ba165b4fa208c4016"
+  integrity sha512-Zj9STqALCukQ6icBq/sw4hdd9QCnEoOmYZIUdCxmtqx5mUGKkUe5eICxuurqHFIP1fmkTeOdBMAzCqXaUtXo9g==
 
 react-reveal@^1.2.2:
   version "1.2.2"
