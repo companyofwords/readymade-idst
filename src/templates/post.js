@@ -5,6 +5,7 @@ import { graphql, Link } from 'gatsby'
 import IndexLayout from '../components/layout/IndexLayout'
 import config from "../../data/SiteConfig"
 import PostComments from "../components/Post/PostComments"
+import Contact from "../components/Post/PostContact"
 import Chip from '@material-ui/core/Chip'
 
 export const BlogPostTemplate = ({
@@ -173,6 +174,7 @@ export const BlogPostTemplate = ({
           </div>
         </div>
         <PostComments slug={slug} post={id}/>
+        <Contact/>
       </div>
     </section>
   )
