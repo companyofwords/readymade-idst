@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import injectSheet from "react-jss"
-//import Obfuscate from "react-obfuscate"
+import Obfuscate from "react-obfuscate"
 
 import Form from "../ContactForm"
 import config from "../../../data/SiteConfig"
