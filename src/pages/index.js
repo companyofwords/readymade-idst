@@ -76,9 +76,9 @@ export default class IndexPage extends React.Component {
                   />
                   
                   <div className="buttonfooter">
-                  <Button large to={post.slug} icon={<ArrowForwardIcon />}>
-        Read On
-      </Button>
+                  <Button large to={post.slug} icon={<ArrowForwardIcon />} ariaLabel={post.title}>
+                      Read On
+                  </Button>
 
                   </div>
                 </ExpansionPanelDetails>
