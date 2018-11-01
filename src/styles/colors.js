@@ -15,5 +15,5 @@ module.exports = {
   headerbackground: "#FF0000", //background red
   headertitle: "#373142", //
   text: "#373142",//darkblue
-  border: "#373142" // dark blue
+  border: "#373142", // dark blue
 };

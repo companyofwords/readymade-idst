@@ -223,7 +223,7 @@ const LogoSection = () => (
                 <div>
                   <h4>We Need:</h4>
                     {data.wordpressAcfOptions.options.weneed.map(weneed => (
-                      <div key={weneed.itemnumber}><span>- {weneed.item}</span></div>
+                      <div key={weneed.itemnumber}><li>- {weneed.item}</li></div>
                       
                     ))}
                   

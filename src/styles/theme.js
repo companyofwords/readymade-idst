@@ -18,8 +18,8 @@ const theme = createMuiTheme({
       linesMargin: "20px"
     },
     fonts: {
-      unstyledFamily: `Permanent Marker`,
-      styledFamily: "Permanent Marker",
+      headerFamily: `Permanent Marker`,
+      bodyFamily: `Special Elite`,
       styledFonts: "300,400,600"
     }
   },

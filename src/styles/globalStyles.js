@@ -21,13 +21,25 @@ injectGlobal`
     text-decoration: underline;
   }
 
-  p, span, li {
-      font-family: ${theme.base.fonts.styledFamily};
-      text-decoration: underline;
+  p {
+      font-family: ${theme.base.fonts.bodyFamily};
       color: ${theme.base.colors.text};
       background: ${theme.base.colors.background};
       text-align: justify;
+      padding: 5px;
 
+  }
+
+  span {
+    font-family: ${theme.base.fonts.bodyFamily};
+      color: ${theme.base.colors.text};
+      text-align: justify;
+  }
+
+  li {
+    font-family: ${theme.base.fonts.bodyFamily};
+      color: ${theme.base.colors.background};
+      text-align: justify;
   }
 
   h1 {
@@ -36,11 +48,12 @@ injectGlobal`
     text-decoration: none;
     color: white;
     background: ${theme.base.colors.link};
+    font-family: ${theme.base.fonts.headerFamily};
 
   }
 
   h2, h3, h4 {
-    font-family: "Permanent Marker";
+    font-family: ${theme.base.fonts.headerFamily};
     color: white;
     font-size: 1.8em;
     line-height: 0.7em;
