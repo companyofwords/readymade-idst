@@ -71,4 +71,14 @@ injectGlobal`
     background: "rgb(252,79,8)";
     //width: "100%";
   }
+
+  img[src*=".svg"] {
+    width: 500px\9; 
+  }
+  // 2
+  @media screen and (min-width:0\0) {
+    img[src*=".svg"] {
+      width: 500px; 
+    }
+  }
 `
