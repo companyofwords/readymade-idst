@@ -98,8 +98,8 @@ const LogoSection = () => (
             logo {
               localFile {
                 childImageSharp {
-                  resize(width: 180, height: 180) {
-                    src
+                  fluid(maxWidth: 500) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   }
                 }
               }
