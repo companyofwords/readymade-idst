@@ -91,6 +91,35 @@ const LogoSection = () => (
             copyright
             donatetext
             donatelink
+            exquisite_corpse {
+              topimage {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 500) {
+                    src
+                  }
+                }
+              }
+              } 
+              middleimage {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 500) {
+                    src
+                  }
+                }
+              }
+              } 
+              bottomimage {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 500) {
+                    src
+                  }
+                }
+              }
+            }
+            }
             weneed {
               item
               itemnumber

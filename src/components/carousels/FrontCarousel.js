@@ -8,6 +8,90 @@ const FrontCarousel = () => (
   <StaticQuery
     query={graphql`
       query {
+        wordpressAcfOptions {
+          id
+          wordpress_id
+          options {
+            logo {
+              id
+            }
+            title
+            sitesubtitle
+            sitemaintitle
+            sitedescription
+            sitelongread
+            backuptoptext
+            allrightsreserved
+            copyright
+            donatetext
+            donatelink
+            exquisite_corpse {
+              topimage {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 500) {
+                    src
+                  }
+                }
+              }
+              } 
+              middleimage {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 500) {
+                    src
+                  }
+                }
+              }
+              } 
+              bottomimage {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 500) {
+                    src
+                  }
+                }
+              }
+            }
+            }
+            weneed {
+              item
+              itemnumber
+            }
+            logo {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 500) {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
+        wordpressWpApiMenusMenusItems(slug: { eq: "main-nav" }) {
+          items {
+            title
+            object_slug
+            url
+            wordpress_id
+            wordpress_children {
+              wordpress_id
+              title
+              url
+              object_slug
+            }
+          }
+        }
+        allWordpressPage(sort: { fields: wordpress_id }, limit: 5) {
+          edges {
+            node {
+              title
+              slug
+              
+            }
+          }
+        }
         wordpressWpApiMenusMenusItems(slug: { eq: "main-nav" }) {
           items {
             title
