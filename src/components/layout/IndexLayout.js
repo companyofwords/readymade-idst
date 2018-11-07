@@ -43,6 +43,7 @@ const TemplateWrapper = ({ children, globals }) => (
 
     <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
     <LogoSection className="logoSection" />
+    <GallerySection className="gallerySection" />
     <ExquisiteCorpse className="exquisiteCorpse"/>
     <div className="mainIndexContent">{children}</div>
     <TagList className="taglist" />
