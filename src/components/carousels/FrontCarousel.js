@@ -39,6 +39,8 @@ const FrontCarousel = () => (
                       childImageSharp {
                         resize(width: 430, height: 190, grayscale: true) {
                           src
+                          width
+                          height
                         }
                       }
                     }
