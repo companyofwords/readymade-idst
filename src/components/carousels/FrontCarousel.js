@@ -114,14 +114,14 @@ const FrontCarousel = () => (
               title
               acf {
                 link
-                frontimage {
+                topimage {
                     id
                     link
                     caption
                     title
                     localFile {
                       childImageSharp {
-                        resize(width: 430, height: 190, grayscale: true) {
+                        resize(width: 430, height: 190) {
                           src
                           width
                           height
@@ -129,6 +129,36 @@ const FrontCarousel = () => (
                       }
                     }
                           }
+                          middleimage {
+                            id
+                            link
+                            caption
+                            title
+                            localFile {
+                              childImageSharp {
+                                resize(width: 430, height: 190) {
+                                  src
+                                  width
+                                  height
+                                }
+                              }
+                            }
+                                  }
+                                  bottomimage {
+                                    id
+                                    link
+                                    caption
+                                    title
+                                    localFile {
+                                      childImageSharp {
+                                        resize(width: 430, height:190) {
+                                          src
+                                          width
+                                          height
+                                        }
+                                      }
+                                    }
+                                          }
                   }
                 }
           }  
@@ -147,7 +177,17 @@ const FrontCarousel = () => (
     `}>
       <Carousel slidesToShow={1} autoplay={true} autoplayInterval={9000} wrapAround={true} withoutControls={true} width="100%">
       {data.allWordpressWpSlide.edges.map(edge => (
-          <img key={edge.node.id} src={`${edge.node.acf.frontimage.localFile.childImageSharp.resize.src}`} alt={`${edge.node.title}`}/>
+          <img key={edge.node.id} src={`${edge.node.acf.topimage.localFile.childImageSharp.resize.src}`} alt={`${edge.node.title}`}/>
+        ))}
+      </Carousel>
+      <Carousel slidesToShow={1} autoplay={true} autoplayInterval={6000} wrapAround={true} withoutControls={true} width="100%">
+      {data.allWordpressWpSlide.edges.map(edge => (
+          <img key={edge.node.id} src={`${edge.node.acf.middleimage.localFile.childImageSharp.resize.src}`} alt={`${edge.node.title}`}/>
+        ))}
+      </Carousel>
+      <Carousel slidesToShow={1} autoplay={true} autoplayInterval={3000} wrapAround={true} withoutControls={true} width="100%">
+      {data.allWordpressWpSlide.edges.map(edge => (
+          <img key={edge.node.id} src={`${edge.node.acf.bottomimage.localFile.childImageSharp.resize.src}`} alt={`${edge.node.title}`}/>
         ))}
       </Carousel>
       </div>

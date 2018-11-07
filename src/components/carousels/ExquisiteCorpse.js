@@ -53,8 +53,6 @@ const ExquisiteCorpse = () => (
       overflow: hidden;
     `}>
       <FrontCarousel />
-      <FrontCarousel />
-      <FrontCarousel />
       </div>
       
     )}
