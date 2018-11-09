@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { css } from 'emotion'
+import { css } from 'react-emotion'
 
 const Footer = () => (
   <StaticQuery
