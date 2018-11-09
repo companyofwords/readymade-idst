@@ -14,7 +14,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import Button from "../components/utilities/button"
 
-import { css } from 'emotion'
+import styled, { css } from 'react-emotion'
 
 export default class IndexPage extends React.Component {
   state = {
@@ -34,6 +34,14 @@ export default class IndexPage extends React.Component {
     
     console.table(data.allWordpressPost)
 
+    const StyledButton = styled(ExpandMoreIcon)`
+  color: red;
+  background-color: red;
+  fill: #373142;
+  max-width: 30px;
+  max-height: 30px;
+`;
+
     return (
   <IndexLayout>
           <div
@@ -51,7 +59,7 @@ export default class IndexPage extends React.Component {
     
               <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)} style={{backgroundImage: `url("${post.acf.frontimage.localFile.childImageSharp.resize.src}")`, backgroundSize: `cover`}}>
               
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon style={{ maxWidth: '30px', maxHeight: '30px', fill: '#373142' }} />}>
+              <ExpansionPanelSummary expandIcon={<StyledButton style={{ maxWidth: '30px', maxHeight: '30px', fill: '#373142' }} />}>
               
                 
               <div>  
