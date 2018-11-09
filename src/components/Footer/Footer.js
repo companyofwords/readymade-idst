@@ -62,7 +62,6 @@ const Footer = () => (
       <div
   className={css`
     grid-column: 1 / -1;
-    font-family: "Varela";
     background-color: #373142;
     border-top: 2px solid black;
     height: 50px;

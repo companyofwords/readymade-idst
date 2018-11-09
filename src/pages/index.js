@@ -42,6 +42,14 @@ export default class IndexPage extends React.Component {
   max-height: 30px;
 `;
 
+const ArrowButton = styled(ArrowForwardIcon)`
+  color: red;
+  background-color: red;
+  fill: #373142;
+  max-width: 30px;
+  max-height: 30px;
+`;
+
     return (
   <IndexLayout>
           <div
@@ -84,7 +92,7 @@ export default class IndexPage extends React.Component {
                   />
                   
                   <div className="buttonfooter">
-                  <Button large to={post.slug} icon={<ArrowForwardIcon />} ariaLabel={post.title}>
+                  <Button large to={post.slug} icon={<ArrowButton />} ariaLabel={post.title}>
                       Read On
                   </Button>
 

@@ -18,8 +18,7 @@ export const buttonStyles = {
       fontWeight: `bold`,
       flexShrink: 0,
       lineHeight: 1,
-      //maxWidth: `30px`,
-      //maxHeight: `30px`,
+      
       WebkitFontSmoothing: `antialiased`,
       whiteSpace: `nowrap`,
       //padding: `${rhythm(2 / 5)} ${rhythm(1 / 2)}`,
@@ -39,7 +38,7 @@ export const buttonStyles = {
         //boxShadow: `0 0 0 0.2rem ${hex2rgba(colors.lilac, 0.25)}`,
       },
       ":after": { content: `''`, display: `block` },
-      "& svg": { marginLeft: `.2em` },
+      "& svg": { marginLeft: `.2em`, maxWidth: `30px`, maxHeight: `30px`, },
       [presets.Tablet]: {
         //...scale(1 / 5),
         //padding: `${rhythm(2 / 6)} ${rhythm(3 / 5)}`,
