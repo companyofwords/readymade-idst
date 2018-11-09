@@ -43,6 +43,15 @@ const GallerySection = () => (
             logo {
               id
             }
+            frontgallery {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 500) {
+                    src
+                  }
+                }
+              }
+            }
             title
             sitesubtitle
             sitemaintitle

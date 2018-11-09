@@ -51,7 +51,7 @@ export default class IndexPage extends React.Component {
     
               <ExpansionPanel expanded={expanded === `${post.id}`} onChange={this.handleChange(`${post.id}`)} style={{backgroundImage: `url("${post.acf.frontimage.localFile.childImageSharp.resize.src}")`, backgroundSize: `cover`}}>
               
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon style={{ width: '30px', height: '30px', fill: '#373142' }} />}>
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon style={{ maxWidth: '30px', maxHeight: '30px', fill: '#373142' }} />}>
               
                 
               <div>  

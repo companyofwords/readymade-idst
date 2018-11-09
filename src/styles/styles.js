@@ -18,6 +18,8 @@ export const buttonStyles = {
       fontWeight: `bold`,
       flexShrink: 0,
       lineHeight: 1,
+      //maxWidth: `30px`,
+      //maxHeight: `30px`,
       WebkitFontSmoothing: `antialiased`,
       whiteSpace: `nowrap`,
       //padding: `${rhythm(2 / 5)} ${rhythm(1 / 2)}`,

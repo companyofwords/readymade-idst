@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Footer from '../Footer/Footer'
 import TagList from '../Index/TagList'
 import LogoSection from '../Top/LogoSection'
+import GallerySection from '../Top/GallerySection'
 import ExquisiteCorpse from '../carousels/ExquisiteCorpse'
 import ScrollButton from '../utilities/ScrollToTop'
 
